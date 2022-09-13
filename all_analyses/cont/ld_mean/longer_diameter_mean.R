@@ -64,3 +64,47 @@ plot(obj.log, fsize = c(0.4, 0.8),
 pdf("all_analyses/cont/ld_mean/plot_log.pdf"); plot(obj.log, fsize = c(0.4, 0.8), 
                      outline = FALSE, lwd = c(3, 7), 
                      leg.txt = "ld_mean (log)"); dev.off()
+
+#------------------------------------------------------------------------------#
+
+  #----------------------------------------#
+  # Subset: Lachesiodendron + sister group #
+  #----------------------------------------#
+
+# Loading tree
+
+read.nexus("tree_subset") -> stryphnod.tree_subset
+plotTree(stryphnod.tree_subset)
+
+# pruning data to match new tree
+traits <- subset(traits, rownames(traits) %in% stryphnod.tree_subset$tip.label)
+
+# contMap requires as input a named vector containing the character values and
+# respective tip labels
+cont.trait <- traits[ , "ld_mean"]
+names(cont.trait) <- rownames(traits)
+
+# Removing NA (the analysis will recognize discrepancies between the tree
+# and the matrix as missing data)
+cont.trait <- cont.trait[!is.na(cont.trait)]
+
+# Checking if the tree contain all taxa
+missing.names <- names(cont.trait)[!names(cont.trait) %in% stryphnod.tree_subset$tip.label]
+
+# Mapping continuous character by estimating states at internal nodes using
+# the method anc.ML, which estimates trait values for tips with missing data
+obj <- contMap(stryphnod.tree_subset, cont.trait, method = "anc.ML", plot = FALSE)
+
+# Inverting colours 
+obj <- setMap(obj, invert = TRUE)
+
+# Plotting
+plot(obj, fsize = c(0.4,1), 
+     outline = FALSE, lwd = c(3,7), 
+     leg.txt = "ld_mean")
+
+# Saving as pdf
+pdf("all_analyses/cont/ld_mean/plot_subset.pdf"); plot(obj, fsize = c(0.4,1), 
+                                                outline = FALSE, lwd = c(3,7), 
+                                                leg.txt = "ld_mean"); dev.off()
+

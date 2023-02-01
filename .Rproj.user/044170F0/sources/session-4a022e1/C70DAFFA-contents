@@ -84,7 +84,7 @@ obj <- summary(trees, plot = FALSE)
 
 # Plotting
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
-plot(obj, colors = cols, fsize = 0.7, cex = c(0.35,0.4), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
+plot(obj, colors = cols, fsize = 0.7, cex = c(0.33,0.4), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
 add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
 
 # Saving as pdf

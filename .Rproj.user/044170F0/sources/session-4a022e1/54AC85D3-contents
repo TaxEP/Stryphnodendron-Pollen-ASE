@@ -36,12 +36,12 @@ obj <- contMap(stryphnod.tree, cont.trait, method = "anc.ML", plot = FALSE)
 obj <- setMap(obj, invert = TRUE)
 
 # Plotting
-plot(obj, fsize = c(0.7, 1), 
+plot(obj, fsize = c(0.4,1), 
      outline = FALSE, lwd = c(3,7), 
      leg.txt = "et_mean")
 
 # Saving as pdf
-pdf("all_analyses/cont/et_mean/plot.pdf"); plot(obj, fsize = c(0.7, 1), 
+pdf("all_analyses/cont/et_mean/plot.pdf"); plot(obj, fsize = c(0.4,1), 
                                                 outline = FALSE, lwd = c(3,7), 
                                                 leg.txt = "et_mean"); dev.off()
 
@@ -61,7 +61,7 @@ plot(obj.log, fsize = c(0.7, 1),
      leg.txt = "et_mean (log)")
 
 # Saving as pdf
-pdf("all_analyses/cont/et_mean/plot_log.pdf"); plot(obj.log, fsize = c(0.7, 1), 
+pdf("all_analyses/cont/et_mean/plot_log.pdf"); plot(obj.log, fsize = c(0.4, 0.8), 
                                                     outline = FALSE, lwd = c(3, 7), 
                                                     leg.txt = "et_mean (log)"); dev.off()
 
@@ -98,12 +98,12 @@ obj <- contMap(stryphnod.tree_subset, cont.trait, method = "anc.ML", plot = FALS
 obj <- setMap(obj, invert = TRUE)
 
 # Plotting
-plot(obj, fsize = c(0.7, 1), 
+plot(obj, fsize = c(0.7,1), 
      outline = FALSE, lwd = c(3,7), 
      leg.txt = "et_mean")
 
 # Saving as pdf
-pdf("all_analyses/cont/et_mean/plot_subset.pdf"); plot(obj, fsize = c(0.7, 1), 
+pdf("all_analyses/cont/et_mean/plot_subset.pdf"); plot(obj, fsize = c(0.4,1), 
                                                 outline = FALSE, lwd = c(3,7), 
                                                 leg.txt = "et_mean"); dev.off()
 

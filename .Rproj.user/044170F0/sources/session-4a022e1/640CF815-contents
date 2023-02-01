@@ -19,11 +19,10 @@ traits <- read.csv("data_cat.csv", header = TRUE, row.names = 1,
 
 # The data.frame needs to be transformed into a named vector
 # containing tip labels as names and character states as factors.
-plyr::count(traits$N_grains)
-cat.trait <- factor(traits$N_grains, levels = c("1", "2", "4", "8", "12", "16", "32", 
-                                                "1_&_2", "4_&_8", "4_&_8_&_12", 
-                                                "4_&_8_&_12_&_16", "8_&_12_&_16", 
-                                                "8_&_16", "12_&_16",
+plyr::count(traits$Outline)
+cat.trait <- factor(traits$Outline, levels = c("circular", "elliptical", "oval", 
+                                               "circular_&_elliptical", "elliptical_&_oval", 
+                                               "oval_&_circular_&_elliptical",
                                                          "missing"))
 cat.trait[is.na(cat.trait)] <- "missing"
 names(cat.trait) <- rownames(traits)
@@ -38,35 +37,19 @@ bin.matrix <- to.matrix(cat.trait, levels(cat.trait))
 # the column that refers to the polymorphic state. 
 
 # Polymorphism 1_&_2
-polymorph8 <- rownames(bin.matrix)[bin.matrix[ , c(8)] == 1]
-bin.matrix[polymorph8, c(1, 2)] <- 1/2
+polymorph4 <- rownames(bin.matrix)[bin.matrix[ , c(4)] == 1]
+bin.matrix[polymorph4, c(1, 2)] <- 1/2
 
-# Polymorphism 4_&_8
-polymorph9 <- rownames(bin.matrix)[bin.matrix[ , c(9)] == 1]
-bin.matrix[polymorph9, c(3, 4)] <- 1/2
+# Polymorphism 2_&_3
+polymorph5 <- rownames(bin.matrix)[bin.matrix[ , c(5)] == 1]
+bin.matrix[polymorph5, c(2, 3)] <- 1/2
 
-# Polymorphism 4_&_8_12
-polymorph10 <- rownames(bin.matrix)[bin.matrix[ , c(10)] == 1]
-bin.matrix[polymorph10, c(3, 4, 5)] <- 1/3
-
-# Polymorphism 4_&_8_&_12_&_16
-polymorph11 <- rownames(bin.matrix)[bin.matrix[ , c(11)] == 1]
-bin.matrix[polymorph11, c(3, 4, 5, 6)] <- 1/4
-
-# Polymorphism 8_&_12_&_16
-polymorph12 <- rownames(bin.matrix)[bin.matrix[ , c(12)] == 1]
-bin.matrix[polymorph12, c(4, 5, 6)] <- 1/3
-
-# Polymorphism 8_&_16
-polymorph13 <- rownames(bin.matrix)[bin.matrix[ , c(13)] == 1]
-bin.matrix[polymorph13, c(4, 6)] <- 1/2
-
-# Polymorphism 12_&_16
-polymorph14 <- rownames(bin.matrix)[bin.matrix[ , c(14)] == 1]
-bin.matrix[polymorph14, c(5, 6)] <- 1/2
+# Polymorphism 1_&_2_&_3
+polymorph6 <- rownames(bin.matrix)[bin.matrix[ , c(6)] == 1]
+bin.matrix[polymorph6, c(1, 2, 3)] <- 1/3
 
 # Removing columns indicating polymorphism
-bin.matrix <- bin.matrix[ , -c(8, 9, 10, 11, 12, 13, 14)]
+bin.matrix <- bin.matrix[ , -c(4:6)]
 
 # Which taxa show missing data? 
 missing.data <- names(which(bin.matrix[ , "missing"] == 1))
@@ -88,8 +71,8 @@ plot(obj, colors = cols, fsize = 0.7, cex = c(0.35,0.4), lwd = 1, ftype="i", off
 add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
 
 # Saving as pdf
-pdf("all_analyses/cat/N_grains/plot.pdf")
+pdf("all_analyses/cat/Outline/plot.pdf")
 plot(obj, colors = cols, fsize = 0.7, cex = c(0.35,0.4), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
-add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
+add.simmap.legend(colors = cols, x = 0.02, y = 37, prompt = FALSE, fsize=0.9)
 dev.off()
 

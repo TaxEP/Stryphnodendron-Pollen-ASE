@@ -24,7 +24,7 @@ cat.trait <- factor(traits$N_grains, levels = c("1", "2", "4", "8", "12", "16", 
                                                 "1_&_2", "4_&_8", "4_&_8_&_12", 
                                                 "4_&_8_&_12_&_16", "8_&_12_&_16", 
                                                 "8_&_16", "12_&_16",
-                                                         "missing"))
+                                                "missing"))
 cat.trait[is.na(cat.trait)] <- "missing"
 names(cat.trait) <- rownames(traits)
 
@@ -76,20 +76,23 @@ missing.data <- names(which(bin.matrix[ , "missing"] == 1))
 ## Removing the column 'missing'
 bin.matrix <- bin.matrix[ , -c(ncol(bin.matrix))]
 ## Assigning 1/(number of states) for all possible states
-bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix) 
+bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix)
 
-# Running stochastic mapping (this can take a while)
-trees <- make.simmap(stryphnod.tree, bin.matrix, model = "ER", nsim = 100)
-obj <- summary(trees, plot = FALSE)
+# putting the columns in the same order of the tip.labels
+bin.matrix[match(stryphnod.tree$tip.label, rownames(bin.matrix)),] -> bin.matrix
 
 # Plotting
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
-plot(obj, colors = cols, fsize = 0.7, cex = c(0.35,0.4), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
-add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
+plotTree(stryphnod.tree, fsize = 0.7, lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
+tiplabels(pie=bin.matrix,piecol=cols,
+          cex=0.4)
+legend(x="topleft", legend=colnames(bin.matrix),pt.cex=2,cex=0.9,pch=21,
+       pt.bg=cols)
+
 
 # Saving as pdf
-pdf("all_analyses/cat/N_grains/plot.pdf")
-plot(obj, colors = cols, fsize = 0.7, cex = c(0.35,0.4), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
-add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
+pdf("all_analyses/cat/N_grains/plot_polymorph.pdf")
+plotTree(stryphnod.tree, fsize = 0.7, lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
+tiplabels(pie=bin.matrix,piecol=cols,
+          cex=0.4)
 dev.off()
-

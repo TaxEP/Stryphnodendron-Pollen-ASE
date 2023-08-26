@@ -19,10 +19,9 @@ traits <- read.csv("data_cat.csv", header = TRUE, row.names = 1,
 
 # The data.frame needs to be transformed into a named vector
 # containing tip labels as names and character states as factors.
-plyr::count(traits$SEM_Ornamentation)
-cat.trait <- factor(traits$SEM_Ornamentation, levels = c("areolate", "psilate", "rugulate", "verrucate", "verrucate-scabrate", "fossulate", "reticulate",
-                                                         "areolate_&_fossulate", "areolate_&_psilate", "areolate_&_reticulate", "areolate_&_rugulate", "areolate_&_verrucate", "psilate_&_verrucate",
-                                                         "missing"))
+plyr::count(traits$grains)
+cat.trait <- factor(traits$grains, levels = c("8", "12", "16", "32", "8&12",
+                                              "8&16", "12&16", "missing"))
 cat.trait[is.na(cat.trait)] <- "missing"
 names(cat.trait) <- rownames(traits)
 
@@ -35,32 +34,20 @@ bin.matrix <- to.matrix(cat.trait, levels(cat.trait))
 # equal to 1/(number of states) for each possible state and then remove 
 # the column that refers to the polymorphic state. 
 
-# Polymorphism areolate_&_fossulate
-polymorph8 <- rownames(bin.matrix)[bin.matrix[ , c(8)] == 1]
-bin.matrix[polymorph8, c(1, 6)] <- 1/2
+# Polymorphism 8&12
+polymorph5 <- rownames(bin.matrix)[bin.matrix[ , c(5)] == 1]
+bin.matrix[polymorph5, c(1, 2)] <- 1/2
 
-# Polymorphism areolate_&_psilate
-polymorph9 <- rownames(bin.matrix)[bin.matrix[ , c(9)] == 1]
-bin.matrix[polymorph9, c(1, 2)] <- 1/2
+# Polymorphism 8&16
+polymorph6 <- rownames(bin.matrix)[bin.matrix[ , c(6)] == 1]
+bin.matrix[polymorph6, c(1, 3)] <- 1/2
 
-# Polymorphism areolate_&_reticulate
-polymorph10 <- rownames(bin.matrix)[bin.matrix[ , c(10)] == 1]
-bin.matrix[polymorph10, c(1, 7)] <- 1/2
-
-# Polymorphism areolate_&_rugulate
-polymorph11 <- rownames(bin.matrix)[bin.matrix[ , c(11)] == 1]
-bin.matrix[polymorph11, c(1, 3)] <- 1/2
-
-# Polymorphism areolate_&_verrucate
-polymorph12 <- rownames(bin.matrix)[bin.matrix[ , c(12)] == 1]
-bin.matrix[polymorph12, c(1, 4)] <- 1/2
-
-# Polymorphism psilate_&_verrucate
-polymorph13 <- rownames(bin.matrix)[bin.matrix[ , c(13)] == 1]
-bin.matrix[polymorph13, c(2, 4)] <- 1/2
+# Polymorphism 12&16
+polymorph7 <- rownames(bin.matrix)[bin.matrix[ , c(7)] == 1]
+bin.matrix[polymorph7, c(2, 3)] <- 1/2
 
 # Removing columns indicating polymorphism
-bin.matrix <- bin.matrix[ , -c(8, 9, 10, 11, 12, 13)]
+bin.matrix <- bin.matrix[ , -c(5,6,7)]
 
 # Which taxa show missing data? 
 missing.data <- names(which(bin.matrix[ , "missing"] == 1))
@@ -76,14 +63,30 @@ bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix)
 trees <- make.simmap(stryphnod.tree, bin.matrix, model = "ER", nsim = 100)
 obj <- summary(trees, plot = FALSE)
 
-# Plotting
-cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
-plot(obj, colors = cols, fsize = 0.7, cex = c(0.2,0.33), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
-add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
+# putting the columns in the same order of the tip.labels, so we can plot polymophisms
+bin.matrix <- bin.matrix[match(stryphnod.tree$tip.label, rownames(bin.matrix)),]
 
-# Saving as pdf
-pdf("all_analyses/cat/SEM_Ornamentation/plot.pdf")
-plot(obj, colors = cols, fsize = 0.7, cex = c(0.2,0.33), lwd = 1, ftype="i", offset = 0.5, type = "phylogram")
-add.simmap.legend(colors = cols, x = 0.1, y = 37, prompt = FALSE, fsize=0.9)
+# putting the columns of obj$ace in the same order of bin.matrix
+obj$ace <- obj$ace[, colnames(bin.matrix)]
+
+# plotting and saving
+cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
+
+pdf("all_analyses/cat/plot_grains.pdf")
+par(lwd = 0.1)
+plotTree(stryphnod.tree,
+         type = "phylogram",
+         fsize = 0.7, 
+         offset = 0.5,
+         cex = 0.2, 
+         lwd = 1, 
+         ftype = "i")
+nodelabels(pie = obj$ace,
+           piecol = cols, 
+           cex=0.5)
+tiplabels(pie = bin.matrix,
+          piecol = cols,
+          cex=0.45)
+add.simmap.legend(colors = cols, x = 13, y = 5, prompt = FALSE, fsize=1)
 dev.off()
 

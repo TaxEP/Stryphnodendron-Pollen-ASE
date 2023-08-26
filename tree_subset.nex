@@ -1,0 +1,73 @@
+#NEXUS
+[R-package APE, Sat Aug 26 11:30:51 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 30;
+	TAXLABELS
+		Microlobius_foetidus
+		Gwilymia_coriaceum
+		Gwilymia_fissuratum
+		Gwilymia_moricolor
+		Gwilymia_occhionianum
+		Gwilymia_racemiferum
+		Gwilymia_paniculatum
+		Gwilymia_polystachyum
+		Stryphnodendron_adstringens
+		Stryphnodendron_cristalinae
+		Stryphnodendron_gracile
+		Stryphnodendron_polyphyllum
+		Parapiptadenia_blanchetii
+		Parapiptadenia_pterosperma
+		Parapiptadenia_zehntneri
+		Parapiptadenia_rigida
+		Parapiptadenia_excelsa
+		Pityrocarpa_moniliformis
+		Pityrocarpa_obliqua
+		Pityrocarpa_obliqua_brasiliensis
+		Pityrocarpa_brenanii
+		Pityrocarpa_inaequalis
+		Pityrocarpa_schumanniana
+		Pityrocarpa_leptostachya
+		Naiadendron_duckeanum
+		Marlimorimia_bahiana
+		Marlimorimia_warmingii
+		Marlimorimia_contorta
+		Marlimorimia_psilostachya
+		Lachesiodendron_viridiflorum
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Microlobius_foetidus,
+		2	Gwilymia_coriaceum,
+		3	Gwilymia_fissuratum,
+		4	Gwilymia_moricolor,
+		5	Gwilymia_occhionianum,
+		6	Gwilymia_racemiferum,
+		7	Gwilymia_paniculatum,
+		8	Gwilymia_polystachyum,
+		9	Stryphnodendron_adstringens,
+		10	Stryphnodendron_cristalinae,
+		11	Stryphnodendron_gracile,
+		12	Stryphnodendron_polyphyllum,
+		13	Parapiptadenia_blanchetii,
+		14	Parapiptadenia_pterosperma,
+		15	Parapiptadenia_zehntneri,
+		16	Parapiptadenia_rigida,
+		17	Parapiptadenia_excelsa,
+		18	Pityrocarpa_moniliformis,
+		19	Pityrocarpa_obliqua,
+		20	Pityrocarpa_obliqua_brasiliensis,
+		21	Pityrocarpa_brenanii,
+		22	Pityrocarpa_inaequalis,
+		23	Pityrocarpa_schumanniana,
+		24	Pityrocarpa_leptostachya,
+		25	Naiadendron_duckeanum,
+		26	Marlimorimia_bahiana,
+		27	Marlimorimia_warmingii,
+		28	Marlimorimia_contorta,
+		29	Marlimorimia_psilostachya,
+		30	Lachesiodendron_viridiflorum
+	;
+	TREE * UNTITLED = [&R] ((((1:1,(((2:1,3:1):1,4:1,(5:1,6:1):1,7:1):1,8:1):1):1,(9:1,10:1,(11:1,12:1):1):1):1,((((((13:1,(14:1,15:1):1):1,16:1):1,17:1):1,((18:1,((19:1,20:1):1,21:1):1):1,((22:1,23:1):1,24:1):1):1):1,25:1):1,((26:1,27:1):1,(28:1,29:1):1):1):1):1,30:1);
+END;

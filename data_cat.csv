@@ -1,48 +1,45 @@
-"name_phylogeny","N_grains","DU_Organization","Pollen_Arrangements","bitetrad_presence","DU_planes","Outline","Aperture","Grains_cohesion","SEM_Ornamentation","pore_number"
-"Anadenanthera_colubrina","16",NA,"regular_arangement_polyad","-","multiplanar","circular_&_elliptical",NA,NA,"areolate_&_rugulate",NA
-"Inga_edulis","32",NA,NA,"-",NA,NA,NA,NA,"verrucate",NA
-"Lachesiodendron_viridiflorum","8",NA,"tetrahedral","present",NA,NA,NA,NA,"verrucate",NA
-"Microlobius_foetidus","8",NA,"tetrahedral","present","multiplanar","oval",NA,NA,"verrucate-scabrate",NA
-"Mimosa_candollei","4",NA,"rhomboidal_&_tetrahedral","-","multiplanar_&_uniplanar","elliptical_&_oval",NA,NA,"areolate_&_verrucate","3&4"
-"Mimosa_pigra","4",NA,"decussate_&_rhomboidal","-","multiplanar_&_uniplanar",NA,NA,NA,NA,NA
-"Mimosa_ursina","1_&_2",NA,NA,"-",NA,NA,NA,NA,"areolate","3"
-"Parapiptadenia_excelsa","12_&_16",NA,NA,"-",NA,NA,NA,NA,NA,NA
-"Parapiptadenia_pterosperma","8_&_12_&_16",NA,NA,NA,NA,"circular",NA,NA,"rugulate",NA
-"Parapiptadenia_rigida","16",NA,NA,"-",NA,NA,NA,NA,NA,NA
-"Parapiptadenia_zehntneri","8_&_16",NA,"regular_arangement_polyad",NA,NA,"oval",NA,NA,"areolate_&_psilate","4&6"
-"Piptadenia_adiantoides","4_&_8_&_12",NA,"tetrahedral","present","multiplanar","oval",NA,NA,"psilate",NA
-"Piptadenia_floribunda","16",NA,NA,"-",NA,"elliptical",NA,NA,NA,NA
-"Piptadenia_gonoacantha","12",NA,NA,"-",NA,"oval",NA,NA,NA,NA
-"Piptadenia_irwinii","16",NA,"regular_arangement_polyad","-",NA,NA,NA,NA,"psilate",NA
-"Piptadenia_paniculata","16",NA,NA,"-",NA,NA,NA,NA,NA,NA
-"Piptadenia_retusa","4_&_8_&_12_&_16",NA,NA,NA,NA,"oval",NA,NA,NA,NA
-"Piptadenia_stipulacea","12",NA,"regular_arangement_polyad","-",NA,"oval_&_circular_&_elliptical",NA,NA,"areolate","3&4"
-"Pityrocarpa_moniliformis","8",NA,"regular_arangement_polyad","absent","multiplanar","elliptical_&_oval",NA,NA,"psilate_&_verrucate","3&4&5"
-"Pityrocarpa_obliqua","8_&_16",NA,NA,"absent",NA,"oval",NA,NA,"areolate",NA
-"Pseudopiptadenia_bahiana","8_&_16",NA,NA,NA,NA,"elliptical_&_oval",NA,NA,"psilate",NA
-"Pseudopiptadenia_brenanii","12_&_16",NA,NA,"-",NA,NA,NA,NA,"psilate",NA
-"Pseudopiptadenia_contorta","8_&_16",NA,NA,NA,NA,"oval",NA,NA,"psilate",NA
-"Pseudopiptadenia_psilostachya","8_&_16",NA,NA,NA,NA,"oval",NA,NA,NA,NA
-"Pseudopiptadenia_suaveolens","12_&_16",NA,NA,"-",NA,"oval",NA,NA,NA,NA
-"Senegalia_nigrescens","16",NA,NA,"-",NA,NA,NA,NA,NA,NA
-"Stryphnodendron_adstringens","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_coriaceum","8_&_16",NA,NA,NA,NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_cristalinae","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_duckeanum","12_&_16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_fissuratum","8_&_16",NA,NA,NA,NA,"elliptical_&_oval",NA,NA,NA,NA
-"Stryphnodendron_foreroi","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_gracile","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_guianense","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_heringeri","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_microstachyum","8_&_16",NA,NA,NA,NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_moricolor","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"areolate_&_fossulate",NA
-"Stryphnodendron_obovatum","16",NA,"irregular_arangement_polyad","-",NA,"oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_occhionianum","8",NA,"irregular_arangement_polyad",NA,NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_paniculatum","16",NA,NA,"-",NA,"oval",NA,NA,"areolate_&_fossulate",NA
-"Stryphnodendron_platyspicum","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_polyphyllum","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_polystachyum","4_&_8",NA,"irregular_arangement_polyad",NA,NA,"elliptical_&_oval",NA,NA,"verrucate",NA
-"Stryphnodendron_pulcherrimum","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Stryphnodendron_racemiferum","16",NA,NA,"-",NA,"elliptical_&_oval",NA,NA,"areolate_&_reticulate",NA
-"Stryphnodendron_rotundifolium","8_&_16",NA,"irregular_arangement_polyad",NA,NA,"elliptical_&_oval",NA,NA,"psilate_&_verrucate",NA
-"Vachellia_farnesiana","16",NA,NA,"-",NA,NA,NA,NA,NA,NA
+"name_phylogeny","grains","outline","pollen_arrangement","DU_planes","ornamentation","pore_number"
+"Anadenanthera_colubrina","16","circular&elliptical","regular arangement polyad","multiplanar","areolate&rugulate",NA
+"Gwilymia_coriaceum","16","elliptical&oval",NA,NA,"verrucate",NA
+"Gwilymia_fissuratum","16","oval",NA,NA,NA,NA
+"Gwilymia_moricolor","16","elliptical&oval",NA,NA,"areolate&fossulate",NA
+"Gwilymia_occhionianum","8","elliptical&oval","irregular arangement polyad",NA,"verrucate",NA
+"Gwilymia_paniculatum","16","oval",NA,NA,"areolate&fossulate",NA
+"Gwilymia_polystachyum","8","elliptical&oval","irregular arangement polyad",NA,"verrucate",NA
+"Gwilymia_racemiferum","16","elliptical&oval",NA,NA,"areolate&reticulate",NA
+"Inga_edulis","32",NA,NA,NA,"verrucate",NA
+"Lachesiodendron_viridiflorum","8",NA,"tetrahedral",NA,"verrucate",NA
+"Marlimorimia_bahiana","16","oval",NA,NA,"psilate",NA
+"Marlimorimia_contorta","16","oval",NA,NA,"psilate",NA
+"Marlimorimia_psilostachya","16","oval",NA,NA,NA,NA
+"Marlimorimia_warmingii","12&16","elliptical&oval","irregular arangement polyad",NA,"psilate","4"
+"Microlobius_foetidus","8","oval","tetrahedral","multiplanar","verrucate scabrate",NA
+"Mimosa_irrigua","8",NA,NA,"multiplanar","areolate&verrucate",NA
+"Mimosa_lepidophora","12",NA,"irregular arangement polyad","multiplanar","areolate",NA
+"Mimosa_pithecolobioides","12","elliptical","irregular arangement polyad","multiplanar","areolate",NA
+"Mimosa_watsonii","12","elliptical","regular arangement polyad","multiplanar","microverrucate&rugulate","3"
+"Naiadendron_duckeanum","16","elliptical&oval",NA,NA,"psilate&verrucate",NA
+"Parapiptadenia_blanchetii","16","oval",NA,NA,"psilate",NA
+"Parapiptadenia_excelsa","12",NA,NA,NA,NA,NA
+"Parapiptadenia_pterosperma","16","circular",NA,NA,"rugulate",NA
+"Parapiptadenia_rigida","16",NA,NA,NA,NA,NA
+"Parapiptadenia_zehntneri","16","oval","regular arangement polyad",NA,"areolate&psilate","4&6"
+"Piptadenia_adiantoides","8&12","oval","tetrahedral","multiplanar","psilate",NA
+"Piptadenia_floribunda","16","elliptical",NA,NA,NA,NA
+"Piptadenia_gonoacantha","12","oval",NA,NA,NA,NA
+"Piptadenia_irwinii","16",NA,"regular arangement polyad",NA,"psilate",NA
+"Piptadenia_paniculata","16",NA,NA,NA,NA,NA
+"Piptadenia_stipulacea","12","elliptical&oval","regular arangement polyad",NA,"areolate","3&4"
+"Pityrocarpa_brenanii","12&16",NA,NA,NA,"psilate",NA
+"Pityrocarpa_inaequalis","12","oval",NA,NA,NA,NA
+"Pityrocarpa_leptostachya","16",NA,NA,NA,NA,NA
+"Pityrocarpa_moniliformis","8","elliptical&oval","regular arangement polyad","multiplanar","psilate&verrucate","3&4&5"
+"Pityrocarpa_obliqua","8&16","oval",NA,NA,"areolate",NA
+"Pityrocarpa_obliqua_brasiliensis","16",NA,NA,NA,"areolate",NA
+"Pityrocarpa_schumanniana","16","oval",NA,NA,NA,NA
+"Senegalia_nigrescens","16",NA,NA,NA,NA,NA
+"Stryphnodendron_adstringens","16","elliptical&oval",NA,NA,"psilate&verrucate",NA
+"Stryphnodendron_cristalinae","16","elliptical&oval",NA,NA,"verrucate",NA
+"Stryphnodendron_gracile","16","elliptical&oval",NA,NA,"verrucate",NA
+"Stryphnodendron_polyphyllum","16","elliptical&oval",NA,NA,"psilate&verrucate",NA
+"Vachellia_farnesiana","16",NA,NA,NA,NA,NA

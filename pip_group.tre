@@ -1,0 +1,526 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=424;
+	taxlabels
+	Anadenanthera_colubrina
+	Gwilymia_coriaceum
+	Gwilymia_fissuratum
+	Gwilymia_moricolor
+	Gwilymia_occhionianum
+	Gwilymia_paniculatum
+	Gwilymia_polystachyum
+	Gwilymia_racemiferum
+	Inga_edulis
+	Lachesiodendron_viridiflorum
+	Marlimorimia_bahiana
+	Marlimorimia_contorta
+	Marlimorimia_psilostachya
+	Marlimorimia_warmingii
+	Microlobius_foetidus
+	Mimosa_acantholoba_acantholoba
+	Mimosa_acantholoba_eurycarpa
+	Mimosa_acapulcensis
+	Mimosa_accedens
+	Mimosa_acroconica
+	Mimosa_aculeaticarpa
+	Mimosa_aculeaticarpa_biuncifera
+	Mimosa_acutistipula_acutistipula
+	Mimosa_adamantina_adamantina
+	Mimosa_adenantheroides
+	Mimosa_adenantheroides_hystricosa
+	Mimosa_adenocarpa
+	Mimosa_adenotricha
+	Mimosa_adpressa
+	Mimosa_affinis
+	Mimosa_aguapeia
+	Mimosa_albida_albida
+	Mimosa_albolanata
+	Mimosa_albolanata_brasiliana
+	Mimosa_albolanata_paucipinna
+	Mimosa_amnisatri
+	Mimosa_andina
+	Mimosa_antioquensis
+	Mimosa_antrorsa
+	Mimosa_apodocarpa
+	Mimosa_arenosa_arenosa
+	Mimosa_arenosa_leiocarpa
+	Mimosa_aspera
+	Mimosa_atlantica
+	Mimosa_auriculata
+	Mimosa_aurivillus
+	Mimosa_aurivillus_aurivillus
+	Mimosa_aurivillus_calothamnos
+	Mimosa_aurivillus_sordescens
+	Mimosa_bahamensis
+	Mimosa_barretoi
+	Mimosa_bathyrrhena
+	Mimosa_benthamii
+	Mimosa_bifurca
+	Mimosa_bimucronata
+	Mimosa_bispiculata
+	Mimosa_blanchetii
+	Mimosa_boliviana
+	Mimosa_borealis
+	Mimosa_brachycarpa
+	Mimosa_brevipetiolata_hirtula
+	Mimosa_busseana
+	Mimosa_caduca
+	Mimosa_caerulea
+	Mimosa_caesalpiniifolia
+	Mimosa_calcicola
+	Mimosa_caliciadenia
+	Mimosa_callidryas
+	Mimosa_callithrix
+	Mimosa_calothamnos_calothamnos
+	Mimosa_campicola_planipes
+	Mimosa_camporum
+	Mimosa_candollei
+	Mimosa_caracensis
+	Mimosa_casta
+	Mimosa_ceratonia_ceratonia
+	Mimosa_ceratonia_interior
+	Mimosa_chartostegia
+	Mimosa_chiliomera
+	Mimosa_chiquitaniensis
+	Mimosa_chochisensis
+	Mimosa_chrysastra
+	Mimosa_chrysothrix
+	Mimosa_cisparanensis
+	Mimosa_claussenii
+	Mimosa_claussenii_claviceps
+	Mimosa_claussenii_megistophylla
+	Mimosa_claussenii_microphyllidia
+	Mimosa_claussenii_prorsiseta
+	Mimosa_colombiana
+	Mimosa_coniflora
+	Mimosa_cordistipula
+	Mimosa_coruscocaesia
+	Mimosa_corynadenia
+	Mimosa_costenya
+	Mimosa_craspedisetosa
+	Mimosa_cruenta
+	Mimosa_crumenarioides
+	Mimosa_cryptothamnos
+	Mimosa_ctenodes
+	Mimosa_cuiabensis
+	Mimosa_cyclophylla
+	Mimosa_daleoides
+	Mimosa_dalyi
+	Mimosa_deamii
+	Mimosa_debilis_debilis
+	Mimosa_decorticans
+	Mimosa_delicatula
+	Mimosa_densa_alligantina
+	Mimosa_densa_densa
+	Mimosa_depauperata
+	Mimosa_detinens
+	Mimosa_dicerastes
+	Mimosa_dichroa
+	Mimosa_diminuta
+	Mimosa_diplotricha_diplotricha
+	Mimosa_discobola
+	Mimosa_distachya_oligacantha
+	Mimosa_dolens_dolens
+	Mimosa_dolens_rigida
+	Mimosa_dominarum
+	Mimosa_domingensis
+	Mimosa_dormiens
+	Mimosa_dryandroides_extratropica
+	Mimosa_dutrae
+	Mimosa_dysocarpa
+	Mimosa_echinocaula
+	Mimosa_elliptica
+	Mimosa_emoryana
+	Mimosa_ephedroides
+	Mimosa_ervendbergii
+	Mimosa_eurystegia
+	Mimosa_fachinalensis
+	Mimosa_farinosa
+	Mimosa_fiebrigii
+	Mimosa_filipes
+	Mimosa_flagellaris
+	Mimosa_flocculosa
+	Mimosa_foliolosa_brevibractea
+	Mimosa_foliolosa_foederalis
+	Mimosa_foliolosa_foliolosa
+	Mimosa_foliolosa_franciscana
+	Mimosa_foliolosa_grandibracteata
+	Mimosa_foliolosa_gravida
+	Mimosa_foliolosa_multipinna
+	Mimosa_foliolosa_pachycarpa
+	Mimosa_foliolosa_paranani
+	Mimosa_foliolosa_peregrina
+	Mimosa_foliolosa_pubescens
+	Mimosa_foliolosa_vernicosa
+	Mimosa_furfuracea
+	Mimosa_galeottii
+	Mimosa_gatesiae
+	Mimosa_gemmulata
+	Mimosa_glutinosa
+	Mimosa_goldmanii
+	Mimosa_gracilis_invisiformis
+	Mimosa_gracilis_stipitata
+	Mimosa_grahamii
+	Mimosa_grandidieri
+	Mimosa_granitica
+	Mimosa_guaranitica
+	Mimosa_guatemalensis
+	Mimosa_guilandinae
+	Mimosa_gymnas
+	Mimosa_hafomantsina
+	Mimosa_hamata
+	Mimosa_hapaloclada
+	Mimosa_hatschbachii
+	Mimosa_hebecarpa
+	Mimosa_heringeri
+	Mimosa_hexandra
+	Mimosa_hirsutissima_barbigera
+	Mimosa_hirsutissima_grossa
+	Mimosa_hondurana
+	Mimosa_honesta
+	Mimosa_humivagans
+	Mimosa_hypoglauca_hypoglauca
+	Mimosa_incana
+	Mimosa_incarum
+	Mimosa_insignis
+	Mimosa_interrupta
+	Mimosa_invisa_invisa
+	Mimosa_involucrata
+	Mimosa_irrigua
+	Mimosa_jacobita
+	Mimosa_jaenensis
+	Mimosa_josephina
+	Mimosa_kalunga
+	Mimosa_kuhnisteroides
+	Mimosa_lacerata
+	Mimosa_lactiflua
+	Mimosa_lamolina
+	Mimosa_laniceps
+	Mimosa_lanuginosa_lanuginosa
+	Mimosa_laticifera
+	Mimosa_latispinosa
+	Mimosa_leiocephala
+	Mimosa_lepidophora
+	Mimosa_lepidorepens
+	Mimosa_lepidota
+	Mimosa_leprosa_parviceps
+	Mimosa_leptantha
+	Mimosa_leptocarpa
+	Mimosa_leucaenoides
+	Mimosa_levenensis
+	Mimosa_lewisii
+	Mimosa_lithoreas
+	Mimosa_longepedunculata
+	Mimosa_loxensis
+	Mimosa_luisana
+	Mimosa_macedoana
+	Mimosa_maguirei
+	Mimosa_malacophylla
+	Mimosa_manidea
+	Mimosa_martindelcampoi
+	Mimosa_melanocarpa
+	Mimosa_menabeensis
+	Mimosa_mensicola
+	Mimosa_micropteris
+	Mimosa_minarum
+	Mimosa_minutifolia
+	Mimosa_misera
+	Mimosa_modesta
+	Mimosa_mollis
+	Mimosa_monancistra
+	Mimosa_montana_montana
+	Mimosa_montana_sandemanii
+	Mimosa_montiscarasae
+	Mimosa_morroensis
+	Mimosa_mossarnbicensis
+	Mimosa_myriadenia
+	Mimosa_myriocephala
+	Mimosa_myrioglandulosa
+	Mimosa_myriophylla
+	Mimosa_nanchititlana
+	Mimosa_neonitens
+	Mimosa_neptunioides
+	Mimosa_niederleinii
+	Mimosa_nitens
+	Mimosa_nossibiensis
+	Mimosa_nothacacia
+	Mimosa_nothopteris
+	Mimosa_oblonga
+	Mimosa_occidentalis
+	Mimosa_oedoclada
+	Mimosa_oligosperma
+	Mimosa_onilahensis
+	Mimosa_ophthalmocentra
+	Mimosa_orbignyana
+	Mimosa_orthacantha
+	Mimosa_orthocarpa
+	Mimosa_pachycarpoides
+	Mimosa_palmeri
+	Mimosa_paludosa
+	Mimosa_papposa
+	Mimosa_parviceps
+	Mimosa_parvipinna
+	Mimosa_paucifolia
+	Mimosa_pectinatipinna
+	Mimosa_pedersenii
+	Mimosa_perdusenii
+	Mimosa_pigra_asperata
+	Mimosa_pigra_dehiscens
+	Mimosa_pilulifera
+	Mimosa_piresii
+	Mimosa_pithecolobioides
+	Mimosa_platycarpa
+	Mimosa_poculata
+	Mimosa_polyantha
+	Mimosa_polycarpa
+	Mimosa_polycarpa_redundans
+	Mimosa_polycarpa_subandina
+	Mimosa_polycephala
+	Mimosa_polydactyla
+	Mimosa_polydidyma
+	Mimosa_prainiana
+	Mimosa_procurrens
+	Mimosa_prorepens
+	Mimosa_pseudocallosa
+	Mimosa_pseudoradula
+	Mimosa_pseudosepiaria
+	Mimosa_psilocarpa
+	Mimosa_psoralea
+	Mimosa_pteridifolia
+	Mimosa_pudica
+	Mimosa_pudica_pudica
+	Mimosa_purpusii
+	Mimosa_pyrenea
+	Mimosa_quadrivalvis
+	Mimosa_quadrivalvis_nuttallii
+	Mimosa_quadrivalvis_occidentalis
+	Mimosa_quitensis
+	Mimosa_radula
+	Mimosa_ramboi
+	Mimosa_ramosissima
+	Mimosa_ramulosa
+	Mimosa_rastrera
+	Mimosa_regina
+	Mimosa_revoluta
+	Mimosa_rheiptera
+	Mimosa_rhodocarpa
+	Mimosa_rhodostegia
+	Mimosa_riedelii
+	Mimosa_robusta
+	Mimosa_rubicaulis_himalayana
+	Mimosa_rufescens
+	Mimosa_rufipila
+	Mimosa_rusbyana
+	Mimosa_sanguinolenta
+	Mimosa_scabrella
+	Mimosa_schleidenii
+	Mimosa_schomburgkii
+	Mimosa_sensitiva
+	Mimosa_sericantha
+	Mimosa_setosa_setosa
+	Mimosa_setosissima
+	Mimosa_setuligera
+	Mimosa_sicyocarpa
+	Mimosa_similis
+	Mimosa_sinaloensis
+	Mimosa_skinneri_desmodioides
+	Mimosa_somnambulans
+	Mimosa_somnians_lasiocarpa
+	Mimosa_somnians_lupulina
+	Mimosa_somnians_somnians
+	Mimosa_somnians_velascoensis
+	Mimosa_sousae
+	Mimosa_speciosissima
+	Mimosa_spirocarpa
+	Mimosa_spixiana
+	Mimosa_splendida
+	Mimosa_sprengelii
+	Mimosa_strigillosa
+	Mimosa_strobiliflora
+	Mimosa_stylosa
+	Mimosa_suberosa
+	Mimosa_subsericea
+	Mimosa_taimbensis
+	Mimosa_tejupilcana
+	Mimosa_tenuiflora
+	Mimosa_tequilana
+	Mimosa_texana_filipes
+	Mimosa_texana_texana
+	Mimosa_tocantina
+	Mimosa_torresiae
+	Mimosa_townsendii
+	Mimosa_trianae
+	Mimosa_tricephala_nelsonii
+	Mimosa_tricephala_xanti
+	Mimosa_ulbrichiana
+	Mimosa_ulei_grallator
+	Mimosa_ulei_ulei
+	Mimosa_uliginosa
+	Mimosa_unipinnata
+	Mimosa_uraguensis
+	Mimosa_urbica
+	Mimosa_ursina
+	Mimosa_urticaria
+	Mimosa_velloziana
+	Mimosa_venatorum
+	Mimosa_verecunda
+	Mimosa_vernicosa_ciliata
+	Mimosa_verrucosa
+	Mimosa_vestita
+	Mimosa_vilersii
+	Mimosa_viperina
+	Mimosa_virgula
+	Mimosa_volubilis
+	Mimosa_waterlotii
+	Mimosa_watsonii
+	Mimosa_weberbaueri
+	Mimosa_weddelliana
+	Mimosa_woodii
+	Mimosa_xanthocentra_tremula
+	Mimosa_xavantinae
+	Mimosa_xiquexiquensis
+	Mimosa_zygophylla
+	Naiadendron_duckeanum
+	Neptunia_monosperma
+	Parapiptadenia_blanchetii
+	Parapiptadenia_excelsa
+	Parapiptadenia_ilheusana
+	Parapiptadenia_pterosperma
+	Parapiptadenia_rigida
+	Parapiptadenia_zehntneri
+	Parkia_timoriana
+	Piptadenia_adiantoides
+	Piptadenia_buchtienii
+	Piptadenia_flava
+	Piptadenia_floribunda
+	Piptadenia_gonoacantha
+	Piptadenia_irwinii
+	Piptadenia_macradenia
+	Piptadenia_paniculata
+	Piptadenia_peruviana
+	Piptadenia_pteroclada
+	Piptadenia_robusta
+	Piptadenia_stipulacea
+	Pityrocarpa_brenanii
+	Pityrocarpa_inaequalis
+	Pityrocarpa_leptostachya
+	Pityrocarpa_moniliformis
+	Pityrocarpa_obliqua
+	Pityrocarpa_obliqua_brasiliensis
+	Pityrocarpa_schumanniana
+	Senegalia_nigrescens
+	Stryphnodendron_adstringens
+	Stryphnodendron_cristalinae
+	Stryphnodendron_foreroi
+	Stryphnodendron_gracile
+	Stryphnodendron_guianense
+	Stryphnodendron_heringeri
+	Stryphnodendron_microstachyum
+	Stryphnodendron_obovatum
+	Stryphnodendron_polyphyllum
+	Stryphnodendron_porcatum
+	Stryphnodendron_pulcherrimum
+	Stryphnodendron_pumilum
+	Stryphnodendron_roseiflorum
+	Stryphnodendron_rotundifolium
+	Stryphnodendron_rotundifolium_villosum
+	Stryphnodendron_velutinum
+	Vachellia_farnesiana
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (Neptunia_monosperma:1.0,((((Inga_edulis:1.0,Senegalia_nigrescens:1.0):1.0,((((((((((((((((((((((((Mimosa_longepedunculata:1.0,Mimosa_oedoclada:1.0):1.0,Mimosa_setosissima:1.0):1.0,Mimosa_foliolosa_brevibractea:1.0):1.0,(Mimosa_densa_alligantina:1.0,Mimosa_claussenii_prorsiseta:1.0):1.0):1.0,(((Mimosa_manidea:1.0,Mimosa_ulei_grallator:1.0):1.0,Mimosa_foliolosa_paranani:1.0):1.0,(Mimosa_vernicosa_ciliata:1.0,Mimosa_lithoreas:1.0):1.0):1.0):1.0,((Mimosa_rheiptera:1.0,Mimosa_decorticans:1.0):1.0,Mimosa_ulei_ulei:1.0):1.0):1.0,Mimosa_rhodostegia:1.0):1.0,(((Mimosa_tocantina:1.0,Mimosa_nitens:1.0):1.0,Mimosa_foliolosa_pubescens:1.0):1.0,(Mimosa_stylosa:1.0,Mimosa_splendida:1.0):1.0):1.0):1.0,Mimosa_viperina:1.0):1.0,((((((Mimosa_foliolosa_gravida:1.0,Mimosa_pachycarpoides:1.0):1.0,Mimosa_heringeri:1.0):1.0,(Mimosa_cryptothamnos:1.0,Mimosa_claussenii_microphyllidia:1.0):1.0):1.0,((Mimosa_claussenii_megistophylla:1.0,Mimosa_foliolosa_multipinna:1.0):1.0,Mimosa_foliolosa_peregrina:1.0):1.0):1.0,(((((Mimosa_melanocarpa:1.0,Mimosa_dominarum:1.0):1.0,Mimosa_foliolosa_franciscana:1.0):1.0,Mimosa_regina:1.0):1.0,Mimosa_densa_densa:1.0):1.0,(Mimosa_antrorsa:1.0,Mimosa_foliolosa_vernicosa:1.0):1.0):1.0):1.0,((Mimosa_laniceps:1.0,Mimosa_claussenii_claviceps:1.0):1.0,Mimosa_oligosperma:1.0):1.0):1.0):1.0,(((((Mimosa_chiliomera:1.0,Mimosa_maguirei:1.0):1.0,Mimosa_acroconica:1.0):1.0,Mimosa_bispiculata:1.0):1.0,Mimosa_paludosa:1.0):1.0,(((Mimosa_myrioglandulosa:1.0,Mimosa_foliolosa_foliolosa:1.0):1.0,Mimosa_diminuta:1.0):1.0,Mimosa_kalunga:1.0):1.0):1.0):1.0,((Mimosa_neonitens:1.0,Mimosa_foliolosa_grandibracteata:1.0):1.0,Mimosa_granitica:1.0):1.0):1.0,(((((Mimosa_leiocephala:1.0,Mimosa_foliolosa_pachycarpa:1.0):1.0,Mimosa_claussenii:1.0):1.0,(Mimosa_caliciadenia:1.0,Mimosa_adenotricha:1.0):1.0):1.0,(((Mimosa_humivagans:1.0,Mimosa_prorepens:1.0):1.0,Mimosa_foliolosa_foederalis:1.0):1.0,(Mimosa_urbica:1.0,Mimosa_speciosissima:1.0):1.0):1.0):1.0,((((Mimosa_albolanata:1.0,Mimosa_albolanata_brasiliana:1.0):1.0,Mimosa_albolanata_paucipinna:1.0):1.0,Mimosa_setosa_setosa:1.0):1.0,Mimosa_accedens:1.0):1.0):1.0):1.0,Mimosa_corynadenia:1.0):1.0,((((((Mimosa_uliginosa:1.0,Mimosa_uraguensis:1.0):1.0,Mimosa_hatschbachii:1.0):1.0,(Mimosa_cruenta:1.0,Mimosa_bifurca:1.0):1.0):1.0,Mimosa_sanguinolenta:1.0):1.0,(Mimosa_strobiliflora:1.0,Mimosa_lepidota:1.0):1.0):1.0,(((Mimosa_piresii:1.0,Mimosa_orbignyana:1.0):1.0,(Mimosa_riedelii:1.0,Mimosa_aguapeia:1.0):1.0):1.0,Mimosa_suberosa:1.0):1.0):1.0):1.0,(((((Mimosa_elliptica:1.0,Mimosa_pigra_dehiscens:1.0):1.0,Mimosa_pigra_asperata:1.0):1.0,Mimosa_strigillosa:1.0):1.0,Mimosa_weddelliana:1.0):1.0,Mimosa_dormiens:1.0):1.0):1.0,(((((((((Mimosa_craspedisetosa:1.0,Mimosa_spixiana:1.0):1.0,(Mimosa_lewisii:1.0,Mimosa_nothopteris:1.0):1.0):1.0,(Mimosa_pteridifolia:1.0,Mimosa_hebecarpa:1.0):1.0):1.0,(((Mimosa_gemmulata:1.0,Mimosa_coruscocaesia:1.0):1.0,(Mimosa_amnisatri:1.0,Mimosa_sericantha:1.0):1.0):1.0,Mimosa_verrucosa:1.0):1.0):1.0,((Mimosa_trianae:1.0,Mimosa_fiebrigii:1.0):1.0,Mimosa_schomburgkii:1.0):1.0):1.0,Mimosa_dalyi:1.0):1.0,(Mimosa_interrupta:1.0,Mimosa_glutinosa:1.0):1.0):1.0,(((Mimosa_xavantinae:1.0,Mimosa_apodocarpa:1.0):1.0,Mimosa_tenuiflora:1.0):1.0,Mimosa_insignis:1.0):1.0):1.0,(((((((Mimosa_auriculata:1.0,Mimosa_josephina:1.0):1.0,Mimosa_rastrera:1.0):1.0,Mimosa_neptunioides:1.0):1.0,((Mimosa_occidentalis:1.0,Mimosa_camporum:1.0):1.0,Mimosa_cisparanensis:1.0):1.0):1.0,Mimosa_orthocarpa:1.0):1.0,((((Mimosa_somnians_lupulina:1.0,Mimosa_brachycarpa:1.0):1.0,Mimosa_somnians_lasiocarpa:1.0):1.0,Mimosa_somnambulans:1.0):1.0,((Mimosa_somnians_somnians:1.0,Mimosa_somnians_velascoensis:1.0):1.0,Mimosa_poculata:1.0):1.0):1.0):1.0,Mimosa_adenocarpa:1.0):1.0):1.0):1.0,((((((((((((((((Mimosa_deamii:1.0,Mimosa_tricephala_nelsonii:1.0):1.0,Mimosa_sicyocarpa:1.0):1.0,(Mimosa_psilocarpa:1.0,Mimosa_sousae:1.0):1.0):1.0,(Mimosa_goldmanii:1.0,Mimosa_acapulcensis:1.0):1.0):1.0,Mimosa_caerulea:1.0):1.0,(Mimosa_lactiflua:1.0,Mimosa_tricephala_xanti:1.0):1.0):1.0,((Mimosa_polycarpa_subandina:1.0,Mimosa_brevipetiolata_hirtula:1.0):1.0,Mimosa_flagellaris:1.0):1.0):1.0,(((((Mimosa_polycarpa_redundans:1.0,Mimosa_lamolina:1.0):1.0,(Mimosa_ctenodes:1.0,Mimosa_incarum:1.0):1.0):1.0,Mimosa_polycarpa:1.0):1.0,(Mimosa_loxensis:1.0,Mimosa_pectinatipinna:1.0):1.0):1.0,((Mimosa_rusbyana:1.0,Mimosa_boliviana:1.0):1.0,Mimosa_woodii:1.0):1.0):1.0):1.0,((((((Mimosa_urticaria:1.0,Mimosa_aurivillus_aurivillus:1.0):1.0,Mimosa_aurivillus:1.0):1.0,Mimosa_bathyrrhena:1.0):1.0,(Mimosa_pudica_pudica:1.0,Mimosa_taimbensis:1.0):1.0):1.0,Mimosa_incana:1.0):1.0,((((Mimosa_montiscarasae:1.0,Mimosa_parviceps:1.0):1.0,Mimosa_kuhnisteroides:1.0):1.0,Mimosa_pseudocallosa:1.0):1.0,Mimosa_orthacantha:1.0):1.0):1.0):1.0,(Mimosa_adpressa:1.0,Mimosa_niederleinii:1.0):1.0):1.0,(((((((Mimosa_schleidenii:1.0,Mimosa_pedersenii:1.0):1.0,Mimosa_fachinalensis:1.0):1.0,Mimosa_dutrae:1.0):1.0,Mimosa_atlantica:1.0):1.0,(((Mimosa_ramulosa:1.0,Mimosa_parvipinna:1.0):1.0,Mimosa_sprengelii:1.0):1.0,Mimosa_ramboi:1.0):1.0):1.0,((((Mimosa_dolens_dolens:1.0,Mimosa_dolens_rigida:1.0):1.0,Mimosa_dryandroides_extratropica:1.0):1.0,Mimosa_oblonga:1.0):1.0,Mimosa_ramosissima:1.0):1.0):1.0,(((((Mimosa_adamantina_adamantina:1.0,Mimosa_myriophylla:1.0):1.0,(Mimosa_perdusenii:1.0,Mimosa_coniflora:1.0):1.0):1.0,Mimosa_micropteris:1.0):1.0,Mimosa_callidryas:1.0):1.0,Mimosa_chartostegia:1.0):1.0):1.0):1.0,((((((Mimosa_pilulifera:1.0,Mimosa_daleoides:1.0):1.0,Mimosa_aurivillus_sordescens:1.0):1.0,Mimosa_lepidorepens:1.0):1.0,(Mimosa_involucrata:1.0,Mimosa_gymnas:1.0):1.0):1.0,(Mimosa_furfuracea:1.0,Mimosa_barretoi:1.0):1.0):1.0,((((((Mimosa_calothamnos_calothamnos:1.0,Mimosa_leprosa_parviceps:1.0):1.0,Mimosa_aurivillus_calothamnos:1.0):1.0,(Mimosa_flocculosa:1.0,Mimosa_caracensis:1.0):1.0):1.0,Mimosa_scabrella:1.0):1.0,Mimosa_chrysastra:1.0):1.0,Mimosa_macedoana:1.0):1.0):1.0):1.0,(((Mimosa_debilis_debilis:1.0,Mimosa_tequilana:1.0):1.0,(Mimosa_velloziana:1.0,Mimosa_sensitiva:1.0):1.0):1.0,(Mimosa_albida_albida:1.0,Mimosa_casta:1.0):1.0):1.0):1.0,(((((Mimosa_xanthocentra_tremula:1.0,Mimosa_jacobita:1.0):1.0,(Mimosa_subsericea:1.0,Mimosa_chochisensis:1.0):1.0):1.0,Mimosa_verecunda:1.0):1.0,((Mimosa_pudica:1.0,Mimosa_affinis:1.0):1.0,Mimosa_polydactyla:1.0):1.0):1.0,(Mimosa_rufipila:1.0,Mimosa_procurrens:1.0):1.0):1.0):1.0,(((((((Mimosa_discobola:1.0,Mimosa_pseudoradula:1.0):1.0,(Mimosa_hypoglauca_hypoglauca:1.0,Mimosa_papposa:1.0):1.0):1.0,(((Mimosa_lanuginosa_lanuginosa:1.0,Mimosa_cyclophylla:1.0):1.0,(Mimosa_virgula:1.0,Mimosa_pyrenea:1.0):1.0):1.0,Mimosa_radula:1.0):1.0):1.0,(((Mimosa_callithrix:1.0,Mimosa_chrysothrix:1.0):1.0,(Mimosa_polycephala:1.0,Mimosa_venatorum:1.0):1.0):1.0,Mimosa_dicerastes:1.0):1.0):1.0,(((Mimosa_hirsutissima_grossa:1.0,Mimosa_hirsutissima_barbigera:1.0):1.0,Mimosa_skinneri_desmodioides:1.0):1.0,Mimosa_vestita:1.0):1.0):1.0,((Mimosa_modesta:1.0,Mimosa_honesta:1.0):1.0,Mimosa_ursina:1.0):1.0):1.0,Mimosa_chiquitaniensis:1.0):1.0):1.0,((((((Mimosa_cordistipula:1.0,Mimosa_misera:1.0):1.0,Mimosa_morroensis:1.0):1.0,Mimosa_guaranitica:1.0):1.0,Mimosa_ulbrichiana:1.0):1.0,Mimosa_leptantha:1.0):1.0,(((Mimosa_setuligera:1.0,Mimosa_xiquexiquensis:1.0):1.0,Mimosa_blanchetii:1.0):1.0,Mimosa_minarum:1.0):1.0):1.0):1.0):1.0,Mimosa_eurystegia:1.0):1.0,((((((Mimosa_gatesiae:1.0,Mimosa_gracilis_stipitata:1.0):1.0,Mimosa_cuiabensis:1.0):1.0,Mimosa_diplotricha_diplotricha:1.0):1.0,((Mimosa_gracilis_invisiformis:1.0,Mimosa_echinocaula:1.0):1.0,Mimosa_paucifolia:1.0):1.0):1.0,(((Mimosa_campicola_planipes:1.0,Mimosa_crumenarioides:1.0):1.0,Mimosa_polydidyma:1.0):1.0,Mimosa_filipes:1.0):1.0):1.0,(((((Mimosa_sinaloensis:1.0,Mimosa_robusta:1.0):1.0,Mimosa_quadrivalvis_occidentalis:1.0):1.0,Mimosa_quadrivalvis_nuttallii:1.0):1.0,(Mimosa_candollei:1.0,Mimosa_quadrivalvis:1.0):1.0):1.0,(Mimosa_antioquensis:1.0,Mimosa_invisa_invisa:1.0):1.0):1.0):1.0):1.0,(((((((((Mimosa_vilersii:1.0,Mimosa_myriocephala:1.0):1.0,(Mimosa_menabeensis:1.0,Mimosa_volubilis:1.0):1.0):1.0,((Mimosa_grandidieri:1.0,Mimosa_onilahensis:1.0):1.0,Mimosa_delicatula:1.0):1.0):1.0,((Mimosa_latispinosa:1.0,Mimosa_nossibiensis:1.0):1.0,Mimosa_levenensis:1.0):1.0):1.0,Mimosa_psoralea:1.0):1.0,((((Mimosa_rubicaulis_himalayana:1.0,Mimosa_hamata:1.0):1.0,Mimosa_prainiana:1.0):1.0,(Mimosa_mossarnbicensis:1.0,Mimosa_busseana:1.0):1.0):1.0,(Mimosa_hafomantsina:1.0,Mimosa_waterlotii:1.0):1.0):1.0):1.0,(Mimosa_ceratonia_interior:1.0,Mimosa_ceratonia_ceratonia:1.0):1.0):1.0,(Mimosa_caesalpiniifolia:1.0,Mimosa_laticifera:1.0):1.0):1.0,(((((Mimosa_acutistipula_acutistipula:1.0,Mimosa_bimucronata:1.0):1.0,Mimosa_pseudosepiaria:1.0):1.0,Mimosa_farinosa:1.0):1.0,(Mimosa_arenosa_leiocarpa:1.0,Mimosa_ophthalmocentra:1.0):1.0):1.0,((Mimosa_hapaloclada:1.0,Mimosa_mensicola:1.0):1.0,Mimosa_arenosa_arenosa:1.0):1.0):1.0):1.0):1.0,((((((((((((((((Mimosa_spirocarpa:1.0,Mimosa_distachya_oligacantha:1.0):1.0,Mimosa_polyantha:1.0):1.0,Mimosa_aspera:1.0):1.0,((Mimosa_guatemalensis:1.0,Mimosa_mollis:1.0):1.0,Mimosa_calcicola:1.0):1.0):1.0,((Mimosa_tejupilcana:1.0,Mimosa_monancistra:1.0):1.0,Mimosa_similis:1.0):1.0):1.0,Mimosa_dysocarpa:1.0):1.0,Mimosa_costenya:1.0):1.0,(((Mimosa_emoryana:1.0,Mimosa_grahamii:1.0):1.0,Mimosa_depauperata:1.0):1.0,(Mimosa_lacerata:1.0,Mimosa_aculeaticarpa_biuncifera:1.0):1.0):1.0):1.0,((((((Mimosa_texana_texana:1.0,Mimosa_texana_filipes:1.0):1.0,Mimosa_palmeri:1.0):1.0,(Mimosa_nanchititlana:1.0,Mimosa_adenantheroides:1.0):1.0):1.0,(Mimosa_minutifolia:1.0,Mimosa_rhodocarpa:1.0):1.0):1.0,(Mimosa_aculeaticarpa:1.0,Mimosa_domingensis:1.0):1.0):1.0,Mimosa_galeottii:1.0):1.0):1.0,((Mimosa_benthamii:1.0,Mimosa_luisana:1.0):1.0,Mimosa_adenantheroides_hystricosa:1.0):1.0):1.0,(((Mimosa_unipinnata:1.0,Mimosa_borealis:1.0):1.0,Mimosa_zygophylla:1.0):1.0,Mimosa_purpusii:1.0):1.0):1.0,(((((Mimosa_acantholoba_acantholoba:1.0,Mimosa_platycarpa:1.0):1.0,Mimosa_acantholoba_eurycarpa:1.0):1.0,(Mimosa_ervendbergii:1.0,Mimosa_hondurana:1.0):1.0):1.0,Mimosa_leptocarpa:1.0):1.0,((Mimosa_leucaenoides:1.0,Mimosa_martindelcampoi:1.0):1.0,Mimosa_malacophylla:1.0):1.0):1.0):1.0,Mimosa_torresiae:1.0):1.0,(((((Mimosa_ephedroides:1.0,Mimosa_detinens:1.0):1.0,(Mimosa_quitensis:1.0,Mimosa_andina:1.0):1.0):1.0,Mimosa_hexandra:1.0):1.0,Mimosa_caduca:1.0):1.0,(((Mimosa_montana_montana:1.0,Mimosa_weberbaueri:1.0):1.0,Mimosa_jaenensis:1.0):1.0,Mimosa_montana_sandemanii:1.0):1.0):1.0):1.0,Mimosa_bahamensis:1.0):1.0,Mimosa_dichroa:1.0):1.0):1.0,(((((((Mimosa_guilandinae:1.0,Mimosa_rufescens:1.0):1.0,Mimosa_watsonii:1.0):1.0,Mimosa_colombiana:1.0):1.0,Mimosa_lepidophora:1.0):1.0,Mimosa_myriadenia:1.0):1.0,(Mimosa_irrigua:1.0,Mimosa_pithecolobioides:1.0):1.0):1.0,((Mimosa_townsendii:1.0,Mimosa_nothacacia:1.0):1.0,Mimosa_revoluta:1.0):1.0):1.0):1.0,((((Piptadenia_adiantoides:1.0,(Piptadenia_pteroclada:1.0,Piptadenia_robusta:1.0):1.0):1.0,(Piptadenia_flava:1.0,Piptadenia_stipulacea:1.0):1.0):1.0,((Piptadenia_buchtienii:1.0,(Piptadenia_paniculata:1.0,Piptadenia_peruviana:1.0):1.0):1.0,((Piptadenia_gonoacantha:1.0,Piptadenia_macradenia:1.0):1.0,Piptadenia_irwinii:1.0):1.0):1.0):1.0,Piptadenia_floribunda:1.0):1.0):1.0):1.0,((((Microlobius_foetidus:1.0,(((Gwilymia_coriaceum:1.0,Gwilymia_fissuratum:1.0):1.0,Gwilymia_moricolor:1.0,(Gwilymia_occhionianum:1.0,Gwilymia_racemiferum:1.0):1.0,Gwilymia_paniculatum:1.0):1.0,Gwilymia_polystachyum:1.0):1.0):1.0,((((Stryphnodendron_adstringens:1.0,(Stryphnodendron_obovatum:1.0,Stryphnodendron_rotundifolium_villosum:1.0):1.0,Stryphnodendron_heringeri:1.0,Stryphnodendron_pumilum:1.0,Stryphnodendron_rotundifolium:1.0):1.0,Stryphnodendron_velutinum:1.0):1.0,Stryphnodendron_cristalinae:1.0,(Stryphnodendron_gracile:1.0,Stryphnodendron_polyphyllum:1.0):1.0,(Stryphnodendron_guianense:1.0,Stryphnodendron_roseiflorum:1.0):1.0,Stryphnodendron_microstachyum:1.0,Stryphnodendron_porcatum:1.0,Stryphnodendron_pulcherrimum:1.0):1.0,Stryphnodendron_foreroi:1.0):1.0):1.0,(((((((Parapiptadenia_ilheusana:1.0,Parapiptadenia_blanchetii:1.0):1.0,(Parapiptadenia_pterosperma:1.0,Parapiptadenia_zehntneri:1.0):1.0):1.0,Parapiptadenia_rigida:1.0):1.0,Parapiptadenia_excelsa:1.0):1.0,((Pityrocarpa_moniliformis:1.0,((Pityrocarpa_obliqua:1.0,Pityrocarpa_obliqua_brasiliensis:1.0):1.0,Pityrocarpa_brenanii:1.0):1.0):1.0,((Pityrocarpa_inaequalis:1.0,Pityrocarpa_schumanniana:1.0):1.0,Pityrocarpa_leptostachya:1.0):1.0):1.0):1.0,Naiadendron_duckeanum:1.0):1.0,((Marlimorimia_bahiana:1.0,Marlimorimia_warmingii:1.0):1.0,(Marlimorimia_contorta:1.0,Marlimorimia_psilostachya:1.0):1.0):1.0):1.0):1.0,Lachesiodendron_viridiflorum:1.0):1.0):1.0,Vachellia_farnesiana:1.0):1.0,(Anadenanthera_colubrina:1.0,Parkia_timoriana:1.0):1.0);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=true;
+	set trees.transformType="cladogram";
+end;
+

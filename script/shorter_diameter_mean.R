@@ -10,11 +10,11 @@ require(phytools)
 #===================#
 
 # Loading tree
-stryphnod.tree <- read.nexus("pruned_tree.nex")
+stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 
 # Loading trait values (continuous traits must be formatted as a data.frame,
 # with tip labels as row names and trait labels as column names)
-traits <- read.csv("data_cont.csv", header = TRUE, row.names = 1)
+traits <- read.csv("output/data/data_cont.csv", header = TRUE, row.names = 1)
 
 # contMap requires as input a named vector containing the character values and
 # respective tip labels

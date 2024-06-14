@@ -1,9 +1,9 @@
 library(ape)
 library(phytools)
 
-data <- read.csv("pollen_data.csv", na.strings = "", 
+data <- read.csv("data/pollen_data.csv", na.strings = "", 
                  stringsAsFactors = F)
-tree <- read.nexus("pip_group.tre")
+tree <- read.nexus("data/pip_group.tre")
 
 #======#
 # TREE #

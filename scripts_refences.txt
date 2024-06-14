@@ -1,3 +1,0 @@
-http://www.phytools.org/Cordoba2017/ex/15/Plotting-methods.html
-http://blog.phytools.org/2016/10/stochastic-mapping-discrete-character.html
-http://blog.phytools.org/2013/03/estimating-ancestral-states-when-tips.html

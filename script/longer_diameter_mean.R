@@ -18,7 +18,7 @@ traits <- read.csv("data_cont.csv", header = TRUE, row.names = 1)
 
 # contMap requires as input a named vector containing the character values and
 # respective tip labels
-cont.trait <- traits[ , "shorter_diameter_mean"]
+cont.trait <- traits[ , "longer_diameter_mean"]
 names(cont.trait) <- rownames(traits)
 
 # Removing NA (the analysis will recognize discrepancies between the tree
@@ -35,12 +35,12 @@ obj <- contMap(stryphnod.tree, cont.trait, method = "anc.ML", plot = FALSE)
 # Inverting colours 
 obj <- setMap(obj, invert = TRUE)
 
-# Plotting
-pdf("all_analyses/cont/sd_mean/plot.pdf")
+# Plotting and saving
+pdf("output/plots/ld_mean.pdf")
 
 plot(obj, fsize = c(0.7, 0.7), 
      outline = FALSE, lwd = c(3,7), 
-     leg.txt = "shorter diameter (mean)")
+     leg.txt = "longer diameter (mean)")
 
 dev.off()
 
@@ -55,15 +55,17 @@ obj.log <- contMap(stryphnod.tree, cont.trait.log, method = "anc.ML", plot = FAL
 obj.log <- setMap(obj.log, invert = TRUE)
 
 # Plotting
-pdf("all_analyses/cont/sd_mean/plot_log.pdf")
+pdf("output/plots/ld_mean_log.pdf")
 
 plot(obj.log, fsize = c(0.7, 0.7), 
      outline = FALSE, lwd = c(3,7), 
-     leg.txt = "shorter diameter (mean-log)")
+     leg.txt = "longer diameter (mean-log)")
 
 dev.off()
 
 #------------------------------------------------------------------------------#
+
+# NEED TO REVIEW - RE-CREAT SUBSET TREE
 
   #----------------------------------------#
   # Subset: Lachesiodendron + sister group #
@@ -79,7 +81,7 @@ traits <- subset(traits, rownames(traits) %in% stryphnod.tree_subset$tip.label)
 
 # contMap requires as input a named vector containing the character values and
 # respective tip labels
-cont.trait <- traits[ , "shorter_diameter_mean"]
+cont.trait <- traits[ , "longer_diameter_mean"]
 names(cont.trait) <- rownames(traits)
 
 # Removing NA (the analysis will recognize discrepancies between the tree
@@ -97,11 +99,11 @@ obj <- contMap(stryphnod.tree_subset, cont.trait, method = "anc.ML", plot = FALS
 obj <- setMap(obj, invert = TRUE)
 
 # Plotting
-pdf("all_analyses/cont/sd_mean/plot_subset.pdf")
+pdf("output/plots/ld_mean_subset.pdf")
 
 plot(obj, fsize = c(0.7, 0.7), 
      outline = FALSE, lwd = c(3,7), 
-     leg.txt = "shorter diameter (subset_mean)")
+     leg.txt = "longer diameter (subset_mean)")
 
 dev.off()
 

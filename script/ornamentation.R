@@ -19,9 +19,10 @@ traits <- read.csv("data_cat.csv", header = TRUE, row.names = 1,
 
 # The data.frame needs to be transformed into a named vector
 # containing tip labels as names and character states as factors.
-plyr::count(traits$grains)
-cat.trait <- factor(traits$grains, levels = c("8", "12", "16", "32", "8&12",
-                                              "8&16", "12&16", "missing"))
+plyr::count(traits$ornamentation)
+cat.trait <- factor(traits$ornamentation, levels = c("areolate", "psilate", "rugulate", "verrucate","verrucate-scabrate", "fossulate", "reticulate",
+                                                         "areolate&fossulate", "areolate&psilate", "areolate&reticulate", "areolate&rugulate", "areolate&verrucate", "microverrucate&rugulate", "psilate&verrucate",
+                                                         "missing"))
 cat.trait[is.na(cat.trait)] <- "missing"
 names(cat.trait) <- rownames(traits)
 
@@ -34,20 +35,37 @@ bin.matrix <- to.matrix(cat.trait, levels(cat.trait))
 # equal to 1/(number of states) for each possible state and then remove 
 # the column that refers to the polymorphic state. 
 
-# Polymorphism 8&12
-polymorph5 <- rownames(bin.matrix)[bin.matrix[ , c(5)] == 1]
-bin.matrix[polymorph5, c(1, 2)] <- 1/2
+# Polymorphism areolate&fossulate
+polymorph8 <- rownames(bin.matrix)[bin.matrix[ , c(8)] == 1]
+bin.matrix[polymorph8, c(1, 6)] <- 1/2
 
-# Polymorphism 8&16
-polymorph6 <- rownames(bin.matrix)[bin.matrix[ , c(6)] == 1]
-bin.matrix[polymorph6, c(1, 3)] <- 1/2
+# Polymorphism areolate&psilate
+polymorph9 <- rownames(bin.matrix)[bin.matrix[ , c(9)] == 1]
+bin.matrix[polymorph9, c(1, 2)] <- 1/2
 
-# Polymorphism 12&16
-polymorph7 <- rownames(bin.matrix)[bin.matrix[ , c(7)] == 1]
-bin.matrix[polymorph7, c(2, 3)] <- 1/2
+# Polymorphism areolate&reticulate
+polymorph10 <- rownames(bin.matrix)[bin.matrix[ , c(10)] == 1]
+bin.matrix[polymorph10, c(1, 7)] <- 1/2
+
+# Polymorphism areolate&rugulate
+polymorph11 <- rownames(bin.matrix)[bin.matrix[ , c(11)] == 1]
+bin.matrix[polymorph11, c(1, 3)] <- 1/2
+
+# Polymorphism areolate&verrucate
+polymorph12 <- rownames(bin.matrix)[bin.matrix[ , c(12)] == 1]
+bin.matrix[polymorph12, c(1, 4)] <- 1/2
+
+# Polymorphism microverrucate&rugulate
+# putting microverrucate as verrucate
+polymorph13 <- rownames(bin.matrix)[bin.matrix[ , c(13)] == 1]
+bin.matrix[polymorph13, c(1, 4)] <- 1/2
+
+# Polymorphism psilate&verrucate
+polymorph14 <- rownames(bin.matrix)[bin.matrix[ , c(14)] == 1]
+bin.matrix[polymorph14, c(2, 4)] <- 1/2
 
 # Removing columns indicating polymorphism
-bin.matrix <- bin.matrix[ , -c(5,6,7)]
+bin.matrix <- bin.matrix[ , -c(8:14)]
 
 # Which taxa show missing data? 
 missing.data <- names(which(bin.matrix[ , "missing"] == 1))
@@ -72,7 +90,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("all_analyses/cat/plot_grains.pdf")
+pdf("output/plots/ornamentation.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",
@@ -87,6 +105,6 @@ nodelabels(pie = obj$ace,
 tiplabels(pie = bin.matrix,
           piecol = cols,
           cex=0.45)
-add.simmap.legend(colors = cols, x = 13, y = 5, prompt = FALSE, fsize=1)
+add.simmap.legend(colors = cols, x = 12, y = 8, prompt = FALSE, fsize=1)
 dev.off()
 

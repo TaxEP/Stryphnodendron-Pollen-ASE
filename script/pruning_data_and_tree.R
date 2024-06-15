@@ -9,24 +9,20 @@ tree <- read.nexus("data/pip_group.tre")
 # TREE #
 #======#
 
-tab.not.tree <- data$name_phylogeny[!data$name_phylogeny %in% tree$tip.label]
-
 tree <- drop.tip(tree, setdiff(tree$tip.label, data$name_phylogeny))
-
-node_descendants <- tree$tip.label[getDescendants(tree, getMRCA(tree, c("Mimosa_oedoclada", "Mimosa_dichroa")))]
-
-tree <- drop.tip(tree, node_descendants)
 
 # Setting all branch lengths equal to one
 
 tree <- compute.brlen(tree, 1)
 
-write.nexus(tree, file = "pruned_tree.nex")
+tree <- force.ultrametric(tree, method = "extend")
+
+write.nexus(tree, file = "output/data/pruned_tree.nex")
 
 # Subtree
 
 tree_subset <- extract.clade(tree, getMRCA(tree, c("Lachesiodendron_viridiflorum", "Microlobius_foetidus")))
-write.nexus(tree_subset, file = "tree_subset.nex")
+write.nexus(tree_subset, file = "output/data/tree_subset.nex")
 
 #=====#
 # CAT #
@@ -34,15 +30,15 @@ write.nexus(tree_subset, file = "tree_subset.nex")
 
 data_pruned <- data[data$name_phylogeny %in% tree$tip.label, ]
 
-data_cat <- data_pruned[, c(6, 12:17)]
+data_cat <- data_pruned[, c(4, 9:11)]
 
-write.csv(data_cat, "data_cat.csv", row.names = F)
+write.csv(data_cat, "output/data/data_cat.csv", row.names = F)
 
 #======#
 # CONT #
 #======#
 
-data_cont <- data_pruned[, c(6, 18:30)]
+data_cont <- data_pruned[, c(4, 12:22)]
 
-write.csv(data_cont, "data_cont.csv", row.names = F)
+write.csv(data_cont, "output/data/data_cont.csv", row.names = F)
 

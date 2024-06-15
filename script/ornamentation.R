@@ -105,6 +105,6 @@ nodelabels(pie = obj$ace,
 tiplabels(pie = bin.matrix,
           piecol = cols,
           cex=0.45)
-add.simmap.legend(colors = cols, x = 12, y = 8, prompt = FALSE, fsize=1)
+add.simmap.legend(colors = cols, x = 0, y = 5, prompt = FALSE, fsize=0.5)
 dev.off()
 

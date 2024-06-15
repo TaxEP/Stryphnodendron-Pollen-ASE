@@ -71,7 +71,7 @@ dev.off()
 
 # Loading tree
 
-read.nexus("tree_subset.nex") -> stryphnod.tree_subset
+read.nexus("output/data/tree_subset.nex") -> stryphnod.tree_subset
 plotTree(stryphnod.tree_subset)
 
 # pruning data to match new tree

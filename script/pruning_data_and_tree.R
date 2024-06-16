@@ -38,7 +38,7 @@ write.csv(data_cat, "output/data/data_cat.csv", row.names = F)
 # CONT #
 #======#
 
-data_cont <- data_pruned[, c(4, 12:22)]
+data_cont <- data_pruned[, c(4, 12:20)]
 
 write.csv(data_cont, "output/data/data_cont.csv", row.names = F)
 

@@ -1,5 +1,5 @@
 #NEXUS
-[R-package APE, Sun Jun 16 15:39:06 2024]
+[R-package APE, Mon Jun 17 11:02:50 2024]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX = 44;
@@ -17,13 +17,13 @@ BEGIN TAXA;
 		Piptadenia_irwinii
 		Piptadenia_floribunda
 		Microlobius_foetidus
-		Gwilymia_coriaceum
-		Gwilymia_fissuratum
+		Gwilymia_coriacea
+		Gwilymia_fissurata
 		Gwilymia_moricolor
-		Gwilymia_occhionianum
-		Gwilymia_racemiferum
-		Gwilymia_paniculatum
-		Gwilymia_polystachyum
+		Gwilymia_occhioniana
+		Gwilymia_racemifera
+		Gwilymia_paniculata
+		Gwilymia_polystachya
 		Stryphnodendron_adstringens
 		Stryphnodendron_cristalinae
 		Stryphnodendron_gracile
@@ -65,13 +65,13 @@ BEGIN TREES;
 		11	Piptadenia_irwinii,
 		12	Piptadenia_floribunda,
 		13	Microlobius_foetidus,
-		14	Gwilymia_coriaceum,
-		15	Gwilymia_fissuratum,
+		14	Gwilymia_coriacea,
+		15	Gwilymia_fissurata,
 		16	Gwilymia_moricolor,
-		17	Gwilymia_occhionianum,
-		18	Gwilymia_racemiferum,
-		19	Gwilymia_paniculatum,
-		20	Gwilymia_polystachyum,
+		17	Gwilymia_occhioniana,
+		18	Gwilymia_racemifera,
+		19	Gwilymia_paniculata,
+		20	Gwilymia_polystachya,
 		21	Stryphnodendron_adstringens,
 		22	Stryphnodendron_cristalinae,
 		23	Stryphnodendron_gracile,

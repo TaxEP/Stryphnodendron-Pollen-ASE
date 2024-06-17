@@ -1,17 +1,17 @@
 #NEXUS
-[R-package APE, Sun Jun 16 15:39:06 2024]
+[R-package APE, Mon Jun 17 11:02:50 2024]
 
 BEGIN TAXA;
 	DIMENSIONS NTAX = 30;
 	TAXLABELS
 		Microlobius_foetidus
-		Gwilymia_coriaceum
-		Gwilymia_fissuratum
+		Gwilymia_coriacea
+		Gwilymia_fissurata
 		Gwilymia_moricolor
-		Gwilymia_occhionianum
-		Gwilymia_racemiferum
-		Gwilymia_paniculatum
-		Gwilymia_polystachyum
+		Gwilymia_occhioniana
+		Gwilymia_racemifera
+		Gwilymia_paniculata
+		Gwilymia_polystachya
 		Stryphnodendron_adstringens
 		Stryphnodendron_cristalinae
 		Stryphnodendron_gracile
@@ -39,13 +39,13 @@ END;
 BEGIN TREES;
 	TRANSLATE
 		1	Microlobius_foetidus,
-		2	Gwilymia_coriaceum,
-		3	Gwilymia_fissuratum,
+		2	Gwilymia_coriacea,
+		3	Gwilymia_fissurata,
 		4	Gwilymia_moricolor,
-		5	Gwilymia_occhionianum,
-		6	Gwilymia_racemiferum,
-		7	Gwilymia_paniculatum,
-		8	Gwilymia_polystachyum,
+		5	Gwilymia_occhioniana,
+		6	Gwilymia_racemifera,
+		7	Gwilymia_paniculata,
+		8	Gwilymia_polystachya,
 		9	Stryphnodendron_adstringens,
 		10	Stryphnodendron_cristalinae,
 		11	Stryphnodendron_gracile,

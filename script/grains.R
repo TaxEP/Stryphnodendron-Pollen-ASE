@@ -110,7 +110,7 @@ obj2$ace <- obj2$ace[, colnames(bin.matrix2)]
 # plotting and saving
 cols2 <- setNames(palette()[1:length(colnames(bin.matrix2))], colnames(bin.matrix2))
 
-pdf("output/plots/grains_ARD.pdf")
+pdf("output/plots/SUPP-grains_ARD.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",

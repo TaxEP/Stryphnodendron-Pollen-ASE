@@ -17,6 +17,36 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1,
                    na.strings = "")
 
+## Testing evolutionary models ------------------------------------------------
+
+# Seting seed for replicability
+set.seed(7)
+
+# adjusting data for fitting
+traits_test <- as.data.frame(lapply(traits, function(x) gsub("&", "+", x)))
+states <- traits_test$outline
+names(states) <- rownames(traits)
+
+# Fitting models
+
+# equal rates
+unordered.er <- fitpolyMk(stryphnod.tree,states,model="ER")
+# symmetrical rates
+unordered.sym <- fitpolyMk(stryphnod.tree,states,model="SYM")
+# all rates different
+unordered.ard <- fitpolyMk(stryphnod.tree,states,model="ARD")
+
+# Evaluating results
+
+# equal rates
+round(AIC(unordered.er),2)
+# symmetrical rates
+round(AIC(unordered.sym),2)
+# all rates different
+round(AIC(unordered.ard),2)
+
+## Preparing data -------------------------------------------------------------
+
 # The data.frame needs to be transformed into a named vector
 # containing tip labels as names and character states as factors.
 plyr::count(traits$outline)
@@ -59,7 +89,7 @@ bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix)
 # Seting seed for replicability
 set.seed(7)
 
-## Equal Rates ----------------------------------------------------------------
+## SIMMAP ---------------------------------------------------------------------
 
 # Running stochastic mapping (this can take a while)
 trees <- make.simmap(stryphnod.tree, bin.matrix, model = "ER", nsim = 100)
@@ -74,7 +104,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/outline_ER.pdf")
+pdf("output/plots/outline.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",
@@ -91,37 +121,3 @@ tiplabels(pie = bin.matrix,
           cex=0.45)
 add.simmap.legend(colors = cols, x = 0, y = 5, prompt = FALSE, fsize=0.5)
 dev.off()
-
-## All Rates Different --------------------------------------------------------
-
-# Running stochastic mapping (this can take a while)
-trees2 <- make.simmap(stryphnod.tree, bin.matrix, model = "ARD", nsim = 100)
-obj2 <- summary(trees2, plot = FALSE)
-
-# putting the columns in the same order of the tip.labels, so we can plot polymophisms
-bin.matrix2 <- bin.matrix[match(stryphnod.tree$tip.label, rownames(bin.matrix)),]
-
-# putting the columns of obj$ace in the same order of bin.matrix
-obj2$ace <- obj2$ace[, colnames(bin.matrix2)]
-
-# plotting and saving
-cols2 <- setNames(palette()[1:length(colnames(bin.matrix2))], colnames(bin.matrix2))
-
-pdf("output/plots/SUPP-outline_ARD.pdf")
-par(lwd = 0.1)
-plotTree(stryphnod.tree,
-         type = "phylogram",
-         fsize = 0.7, 
-         offset = 0.5,
-         cex = 0.2, 
-         lwd = 1, 
-         ftype = "i")
-nodelabels(pie = obj2$ace,
-           piecol = cols2, 
-           cex=0.5)
-tiplabels(pie = bin.matrix2,
-          piecol = cols2,
-          cex=0.45)
-add.simmap.legend(colors = cols2, x = 0, y = 5, prompt = FALSE, fsize=0.5)
-dev.off()
-

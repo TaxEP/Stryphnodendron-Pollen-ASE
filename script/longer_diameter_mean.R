@@ -16,6 +16,8 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 # with tip labels as row names and trait labels as column names)
 traits <- read.csv("output/data/data_cont.csv", header = TRUE, row.names = 1)
 
+## Preparing data -------------------------------------------------------------
+
 # contMap requires as input a named vector containing the character values and
 # respective tip labels
 cont.trait <- traits[ , "longer_diameter_mean"]
@@ -30,6 +32,8 @@ missing.names <- names(cont.trait)[!names(cont.trait) %in% stryphnod.tree$tip.la
 
 # Seting seed for replicability
 set.seed(7)
+
+## contMap --------------------------------------------------------------------
 
 # Mapping continuous character by estimating states at internal nodes using
 # the method anc.ML, which estimates trait values for tips with missing data
@@ -47,7 +51,8 @@ plot(obj, fsize = c(0.7, 0.7),
 
 dev.off()
 
-# What about using log transformed data?
+## Log contMap ----------------------------------------------------------------
+
 cont.trait.log <- log(cont.trait)
 
 # Mapping continuous character by estimating states at internal nodes using

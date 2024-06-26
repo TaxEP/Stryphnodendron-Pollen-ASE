@@ -2,6 +2,7 @@
 
 # Loading phytools and dependencies
 require(phytools)
+library(geiger)
 
 #==============================================================================#
 
@@ -16,6 +17,8 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 # with tip labels as row names and trait labels as column names)
 traits <- read.csv("output/data/data_cont.csv", header = TRUE, row.names = 1)
 
+## Preparing data -------------------------------------------------------------
+
 # contMap requires as input a named vector containing the character values and
 # respective tip labels
 cont.trait <- traits[ , "exine_thickness_mean"]
@@ -27,6 +30,8 @@ cont.trait <- cont.trait[!is.na(cont.trait)]
 
 # Checking if the tree contain all taxa
 missing.names <- names(cont.trait)[!names(cont.trait) %in% stryphnod.tree$tip.label]
+
+## contMap --------------------------------------------------------------------
 
 # Seting seed for replicability
 set.seed(7)
@@ -47,7 +52,9 @@ plot(obj, fsize = c(0.7, 0.7),
 
 dev.off()
 
-# What about using log transformed data?
+
+## Log contMap ----------------------------------------------------------------
+
 cont.trait.log <- log(cont.trait)
 
 # Mapping continuous character by estimating states at internal nodes using

@@ -28,6 +28,9 @@ cont.trait <- cont.trait[!is.na(cont.trait)]
 # Checking if the tree contain all taxa
 missing.names <- names(cont.trait)[!names(cont.trait) %in% stryphnod.tree$tip.label]
 
+# Seting seed for replicability
+set.seed(7)
+
 # Mapping continuous character by estimating states at internal nodes using
 # the method anc.ML, which estimates trait values for tips with missing data
 obj <- contMap(stryphnod.tree, cont.trait, method = "anc.ML", plot = FALSE)
@@ -55,11 +58,10 @@ obj.log <- contMap(stryphnod.tree, cont.trait.log, method = "anc.ML", plot = FAL
 obj.log <- setMap(obj.log, invert = TRUE)
 
 # Plotting and saving
-pdf("output/plots/exine_mean_log.pdf")
+pdf("output/plots/SUPP-exine_mean_log.pdf")
 
 plot(obj.log, fsize = c(0.7, 0.7), 
      outline = FALSE, lwd = c(3,7), 
      leg.txt = "exine thickness (mean-log)")
 
 dev.off()
-

@@ -59,6 +59,11 @@ bin.matrix <- bin.matrix[ , -c(ncol(bin.matrix))]
 ## Assigning 1/(number of states) for all possible states
 bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix) 
 
+# Seting seed for replicability
+set.seed(7)
+
+## Equal Rates ----------------------------------------------------------------
+
 # Running stochastic mapping (this can take a while)
 trees <- make.simmap(stryphnod.tree, bin.matrix, model = "ER", nsim = 100)
 obj <- summary(trees, plot = FALSE)
@@ -90,3 +95,35 @@ tiplabels(pie = bin.matrix,
 add.simmap.legend(colors = cols, x = 0, y = 5, prompt = FALSE, fsize=0.5)
 dev.off()
 
+## All Rates Different --------------------------------------------------------
+
+# Running stochastic mapping (this can take a while)
+trees2 <- make.simmap(stryphnod.tree, bin.matrix, model = "ARD", nsim = 100)
+obj2 <- summary(trees2, plot = FALSE)
+
+# putting the columns in the same order of the tip.labels, so we can plot polymophisms
+bin.matrix2 <- bin.matrix[match(stryphnod.tree$tip.label, rownames(bin.matrix)),]
+
+# putting the columns of obj$ace in the same order of bin.matrix
+obj2$ace <- obj2$ace[, colnames(bin.matrix2)]
+
+# plotting and saving
+cols2 <- setNames(palette()[1:length(colnames(bin.matrix2))], colnames(bin.matrix2))
+
+pdf("output/plots/grains_ARD.pdf")
+par(lwd = 0.1)
+plotTree(stryphnod.tree,
+         type = "phylogram",
+         fsize = 0.7, 
+         offset = 0.5,
+         cex = 0.2, 
+         lwd = 1, 
+         ftype = "i")
+nodelabels(pie = obj2$ace,
+           piecol = cols2, 
+           cex=0.5)
+tiplabels(pie = bin.matrix2,
+          piecol = cols2,
+          cex=0.45)
+add.simmap.legend(colors = cols2, x = 0, y = 5, prompt = FALSE, fsize=0.5)
+dev.off()

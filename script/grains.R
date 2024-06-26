@@ -72,7 +72,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/grains.pdf")
+pdf("output/plots/grains_ER.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",

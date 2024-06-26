@@ -69,7 +69,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/outline.pdf")
+pdf("output/plots/outline_ER.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",

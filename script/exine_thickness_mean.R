@@ -2,7 +2,8 @@
 
 # Loading phytools and dependencies
 require(phytools)
-library(geiger)
+library(tibble)
+library(Rphylopars)
 
 #==============================================================================#
 
@@ -17,16 +18,31 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 # with tip labels as row names and trait labels as column names)
 traits <- read.csv("output/data/data_cont.csv", header = TRUE, row.names = 1)
 
+## Testing evolutionary models ------------------------------------------------
+
+# creating species column
+traits_species <- rownames_to_column(traits, var = "species")
+# selecting species and trait columns
+traits_species <- traits_species[ , c(1,10)]
+
+# checking trait distribution
+plot(density(na.omit(traits_species$exine_thickness_mean)))
+
+# transforming data
+traits_species$exine_thickness_mean <- log(traits_species$exine_thickness_mean)
+
+p_BM <- phylopars(traits_species, stryphnod.tree, model = "BM")
+p_OU <- phylopars(traits_species, stryphnod.tree, model = "OU")
+p_EB <- phylopars(traits_species, stryphnod.tree, model = "EB")
+aic.w(c(AIC(p_BM), AIC(p_OU), AIC(p_EB)))
+
 ## Preparing data -------------------------------------------------------------
 
 # contMap requires as input a named vector containing the character values and
 # respective tip labels
-cont.trait <- traits[ , "exine_thickness_mean"]
-names(cont.trait) <- rownames(traits)
-
-# Removing NA (the analysis will recognize discrepancies between the tree
-# and the matrix as missing data)
-cont.trait <- cont.trait[!is.na(cont.trait)]
+anc_recon <- as.data.frame(p_OU$anc_recon)
+cont.trait <- anc_recon$exine_thickness_mean[1:44]
+names(cont.trait) <- rownames(anc_recon)[1:44]
 
 # Checking if the tree contain all taxa
 missing.names <- names(cont.trait)[!names(cont.trait) %in% stryphnod.tree$tip.label]
@@ -38,13 +54,21 @@ set.seed(7)
 
 # Mapping continuous character by estimating states at internal nodes using
 # the method anc.ML, which estimates trait values for tips with missing data
-obj <- contMap(stryphnod.tree, cont.trait, method = "anc.ML", plot = FALSE)
+
+anc <- c(p_OU$anc_recon[45:84], p_OU$logLik)
+names(anc) <- c(45:84, "logLik")
+
+obj <- contMap(stryphnod.tree, 
+               cont.trait, 
+               method = "user",
+               anc.states = anc,
+               plot = FALSE)
 
 # Inverting colours 
 obj <- setMap(obj, invert = TRUE)
 
 # Plotting and saving
-pdf("output/plots/exine_mean.pdf")
+pdf("output/plots/exine_mean_OU.pdf")
 
 plot(obj, fsize = c(0.7, 0.7), 
      outline = FALSE, lwd = c(3,7), 
@@ -52,23 +76,3 @@ plot(obj, fsize = c(0.7, 0.7),
 
 dev.off()
 
-
-## Log contMap ----------------------------------------------------------------
-
-cont.trait.log <- log(cont.trait)
-
-# Mapping continuous character by estimating states at internal nodes using
-# the method anc.ML, which estimates trait values for tips with missing data
-obj.log <- contMap(stryphnod.tree, cont.trait.log, method = "anc.ML", plot = FALSE)
-
-# Inverting colours 
-obj.log <- setMap(obj.log, invert = TRUE)
-
-# Plotting and saving
-pdf("output/plots/SUPP-exine_mean_log.pdf")
-
-plot(obj.log, fsize = c(0.7, 0.7), 
-     outline = FALSE, lwd = c(3,7), 
-     leg.txt = "exine thickness (mean-log)")
-
-dev.off()

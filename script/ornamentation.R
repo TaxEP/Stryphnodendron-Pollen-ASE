@@ -14,8 +14,7 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 
 # Loading character states (categorical traits must be formatted as a 
 # data.frame, with tip labels as row names and trait labels as column names)
-traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1,
-                   na.strings = "")
+traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1)
 
 ## Testing evolutionary models ------------------------------------------------
 
@@ -27,7 +26,7 @@ traits_test <- as.data.frame(lapply(traits, function(x) gsub("&", "+", x)))
 states <- traits_test$ornamentation
 names(states) <- rownames(traits)
 
-# Fitting models
+# Fitting models (this part can take a while...)
 
 # equal rates
 unordered.er <- fitpolyMk(stryphnod.tree,states,model="ER")
@@ -38,14 +37,7 @@ unordered.ard <- fitpolyMk(stryphnod.tree,states,model="ARD")
 
 # Evaluating results
 
-# equal rates
-round(AIC(unordered.er),2)
-# symmetrical rates
-round(AIC(unordered.sym),2)
-# all rates different
-round(AIC(unordered.ard),2)
-
-# ER -  ; SYM -  ; ARD - 
+aic.w(c(AIC(unordered.er), AIC(unordered.sym), AIC(unordered.ard)))
 
 ## Preparing data -------------------------------------------------------------
 
@@ -144,3 +136,4 @@ tiplabels(pie = bin.matrix,
           cex=0.45)
 add.simmap.legend(colors = cols, x = 0, y = 5, prompt = FALSE, fsize=0.5)
 dev.off()
+

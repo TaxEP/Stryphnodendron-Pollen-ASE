@@ -27,7 +27,7 @@ traits_test <- as.data.frame(lapply(traits, function(x) gsub("&", "+", x)))
 states <- traits_test$outline
 names(states) <- rownames(traits)
 
-# Fitting models
+# Fitting models (this part can take a while...)
 
 # equal rates
 unordered.er <- fitpolyMk(stryphnod.tree,states,model="ER")
@@ -38,14 +38,7 @@ unordered.ard <- fitpolyMk(stryphnod.tree,states,model="ARD")
 
 # Evaluating results
 
-# equal rates
-round(AIC(unordered.er),2)
-# symmetrical rates
-round(AIC(unordered.sym),2)
-# all rates different
-round(AIC(unordered.ard),2)
-
-# ER - 204.89 ; SYM - 196.88 ; ARD - 219.47
+aic.w(c(AIC(unordered.er), AIC(unordered.sym), AIC(unordered.ard)))
 
 ## Preparing data -------------------------------------------------------------
 
@@ -94,7 +87,7 @@ set.seed(7)
 ## SIMMAP ---------------------------------------------------------------------
 
 # Running stochastic mapping (this can take a while)
-trees <- make.simmap(stryphnod.tree, bin.matrix, model = "ER", nsim = 100)
+trees <- make.simmap(stryphnod.tree, bin.matrix, model = "SYM", nsim = 100)
 obj <- summary(trees, plot = FALSE)
 
 # putting the columns in the same order of the tip.labels, so we can plot polymophisms
@@ -106,7 +99,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/outline.pdf")
+pdf("output/plots/outline_SYM.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",
@@ -123,3 +116,4 @@ tiplabels(pie = bin.matrix,
           cex=0.45)
 add.simmap.legend(colors = cols, x = 0, y = 5, prompt = FALSE, fsize=0.5)
 dev.off()
+

@@ -14,8 +14,7 @@ stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
 
 # Loading character states (categorical traits must be formatted as a 
 # data.frame, with tip labels as row names and trait labels as column names)
-traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1,
-                   na.strings = "")
+traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1)
 
 ## Testing evolutionary models ------------------------------------------------
 
@@ -27,7 +26,7 @@ traits_test <- as.data.frame(lapply(traits, function(x) gsub("&", "+", x)))
 states <- traits_test$grains
 names(states) <- rownames(traits)
 
-# Fitting models
+# Fitting models (this part can take a while...)
 
 # equal rates
 unordered.er <- fitpolyMk(stryphnod.tree,states,model="ER")
@@ -38,14 +37,7 @@ unordered.ard <- fitpolyMk(stryphnod.tree,states,model="ARD")
 
 # Evaluating results
 
-# equal rates
-round(AIC(unordered.er),2)
-# symmetrical rates
-round(AIC(unordered.sym),2)
-# all rates different
-round(AIC(unordered.ard),2)
-
-# ER - 181.27 ; SYM - 187.87 ; ARD - 218.73
+aic.w(c(AIC(unordered.er), AIC(unordered.sym), AIC(unordered.ard)))
 
 ## Preparing data -------------------------------------------------------------
 
@@ -106,7 +98,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plotting and saving
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/grains.pdf")
+pdf("output/plots/grains_ER.pdf")
 par(lwd = 0.1)
 plotTree(stryphnod.tree,
          type = "phylogram",

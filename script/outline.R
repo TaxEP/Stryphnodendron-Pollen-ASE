@@ -45,6 +45,8 @@ round(AIC(unordered.sym),2)
 # all rates different
 round(AIC(unordered.ard),2)
 
+# ER - 204.89 ; SYM - 196.88 ; ARD - 219.47
+
 ## Preparing data -------------------------------------------------------------
 
 # The data.frame needs to be transformed into a named vector

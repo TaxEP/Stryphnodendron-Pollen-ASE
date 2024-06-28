@@ -10,12 +10,11 @@ require(phytools)
 #====================#
 
 # Loading tree
-stryphnod.tree <- read.nexus("output/data/pruned_tree.nex")
+phy <- read.nexus("output/data/pruned_tree.nex")
 
 # Loading character states (categorical traits must be formatted as a 
 # data.frame, with tip labels as row names and trait labels as column names)
-traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1,
-                   na.strings = "")
+traits <- read.csv("output/data/data_cat.csv", header = TRUE, row.names = 1)
 
 ## Testing evolutionary models ------------------------------------------------
 
@@ -27,14 +26,17 @@ traits_test <- as.data.frame(lapply(traits, function(x) gsub("&", "+", x)))
 states <- traits_test$outline
 names(states) <- rownames(traits)
 
+# Standardize branch lengths to fit models
+phy$edge.length <- phy$edge.length / max(phy$edge.length)
+
 # Fitting models (this part can take a while...)
 
 # equal rates
-unordered.er <- fitpolyMk(stryphnod.tree,states,model="ER")
+unordered.er <- fitpolyMk(phy,states,model="ER")
 # symmetrical rates
-unordered.sym <- fitpolyMk(stryphnod.tree,states,model="SYM")
+unordered.sym <- fitpolyMk(phy,states,model="SYM")
 # all rates different
-unordered.ard <- fitpolyMk(stryphnod.tree,states,model="ARD")
+unordered.ard <- fitpolyMk(phy,states,model="ARD")
 
 # Evaluating results
 
@@ -87,11 +89,11 @@ set.seed(7)
 ## SIMMAP ---------------------------------------------------------------------
 
 # Running stochastic mapping (this can take a while)
-trees <- make.simmap(stryphnod.tree, bin.matrix, model = "SYM", nsim = 100)
+trees <- make.simmap(phy, bin.matrix, model = "SYM", nsim = 100)
 obj <- summary(trees, plot = FALSE)
 
 # putting the columns in the same order of the tip.labels, so we can plot polymophisms
-bin.matrix <- bin.matrix[match(stryphnod.tree$tip.label, rownames(bin.matrix)),]
+bin.matrix <- bin.matrix[match(phy$tip.label, rownames(bin.matrix)),]
 
 # putting the columns of obj$ace in the same order of bin.matrix
 obj$ace <- obj$ace[, colnames(bin.matrix)]
@@ -101,7 +103,7 @@ cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix)
 
 pdf("output/plots/outline_SYM.pdf")
 par(lwd = 0.1)
-plotTree(stryphnod.tree,
+plotTree(phy,
          type = "phylogram",
          fsize = 0.7, 
          offset = 0.5,

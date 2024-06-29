@@ -242,7 +242,7 @@ names(states) <- rownames(traits)
 
 # deal with NAs (all states)
 states[is.na(states)] <- 
-  "areolate&psilate&rugulate&verrucate&fossulate"
+  "areolate&psilate&rugulate&verrucate&fossulate%verrucate-fossulate"
 
 # Fit models (this part can take a while...)
 
@@ -266,8 +266,8 @@ cat.trait <- factor(
   levels = c("areolate", "psilate", "rugulate", "verrucate",
              "verrucate-scabrate", "fossulate", 
              "areolate&fossulate", "areolate&psilate", 
-             "areolate&rugulate", "areolate&verrucate", 
-             "microverrucate&rugulate", "psilate&verrucate", "missing"))
+             "areolate&rugulate", "areolate&verrucate", "psilate&verrucate",
+             "rugulate&verrucate", "missing"))
 
 cat.trait[is.na(cat.trait)] <- "missing"
 names(cat.trait) <- rownames(traits)
@@ -282,36 +282,31 @@ bin.matrix <- to.matrix(cat.trait, levels(cat.trait))
 # the column that refers to the polymorphic state. 
 
 # Polymorphism areolate&fossulate
-polymorph8 <- rownames(bin.matrix)[bin.matrix[ , c(8)] == 1]
-bin.matrix[polymorph8, c(1, 6)] <- 1/2
+polymorph7 <- rownames(bin.matrix)[bin.matrix[ , c(7)] == 1]
+bin.matrix[polymorph7, c(1, 6)] <- 1/2
 
 # Polymorphism areolate&psilate
-polymorph9 <- rownames(bin.matrix)[bin.matrix[ , c(9)] == 1]
-bin.matrix[polymorph9, c(1, 2)] <- 1/2
-
-# Polymorphism areolate&reticulate
-polymorph10 <- rownames(bin.matrix)[bin.matrix[ , c(10)] == 1]
-bin.matrix[polymorph10, c(1, 7)] <- 1/2
+polymorph8 <- rownames(bin.matrix)[bin.matrix[ , c(8)] == 1]
+bin.matrix[polymorph8, c(1, 2)] <- 1/2
 
 # Polymorphism areolate&rugulate
-polymorph11 <- rownames(bin.matrix)[bin.matrix[ , c(11)] == 1]
-bin.matrix[polymorph11, c(1, 3)] <- 1/2
+polymorph9 <- rownames(bin.matrix)[bin.matrix[ , c(9)] == 1]
+bin.matrix[polymorph9, c(1, 3)] <- 1/2
 
 # Polymorphism areolate&verrucate
-polymorph12 <- rownames(bin.matrix)[bin.matrix[ , c(12)] == 1]
-bin.matrix[polymorph12, c(1, 4)] <- 1/2
-
-# Polymorphism microverrucate&rugulate
-# putting microverrucate as verrucate
-polymorph13 <- rownames(bin.matrix)[bin.matrix[ , c(13)] == 1]
-bin.matrix[polymorph13, c(1, 4)] <- 1/2
+polymorph10 <- rownames(bin.matrix)[bin.matrix[ , c(10)] == 1]
+bin.matrix[polymorph10, c(1, 4)] <- 1/2
 
 # Polymorphism psilate&verrucate
-polymorph14 <- rownames(bin.matrix)[bin.matrix[ , c(14)] == 1]
-bin.matrix[polymorph14, c(2, 4)] <- 1/2
+polymorph11 <- rownames(bin.matrix)[bin.matrix[ , c(11)] == 1]
+bin.matrix[polymorph11, c(2, 4)] <- 1/2
+
+# Polymorphism rugulate&verrucate
+polymorph12 <- rownames(bin.matrix)[bin.matrix[ , c(12)] == 1]
+bin.matrix[polymorph12, c(3, 4)] <- 1/2
 
 # remove columns indicating polymorphism
-bin.matrix <- bin.matrix[ , -c(8:14)]
+bin.matrix <- bin.matrix[ , -c(7:12)]
 
 # which taxa show missing data? 
 missing.data <- names(which(bin.matrix[ , "missing"] == 1))
@@ -322,9 +317,6 @@ missing.data <- names(which(bin.matrix[ , "missing"] == 1))
 bin.matrix <- bin.matrix[ , -c(ncol(bin.matrix))]
 ## assign 1/(number of states) for all possible states
 bin.matrix[row.names(bin.matrix) %in% missing.data, ] <- 1/ncol(bin.matrix) 
-
-# set seed for replicability
-set.seed(7)
 
 ## SIMMAP ---------------------------------------------------------------------
 
@@ -341,7 +333,7 @@ obj$ace <- obj$ace[, colnames(bin.matrix)]
 # plot and save
 cols <- setNames(palette()[1:length(colnames(bin.matrix))], colnames(bin.matrix))
 
-pdf("output/plots/ornamentation.pdf")
+pdf("output/plots/ornamentation_ER.pdf")
 par(lwd = 0.1)
 plotTree(phy,
          type = "phylogram",

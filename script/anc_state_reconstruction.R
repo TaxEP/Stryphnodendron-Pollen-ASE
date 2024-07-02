@@ -534,7 +534,7 @@ plot(obj_longerd, fsize = c(0.7, 0.7),
      outline = FALSE, lwd = c(3,7), 
      leg.txt = "longer diameter (log)",
      ftype="off")
-title("a. Dispersal unit shorter diameter", line = -1)
+title("a. Dispersal unit longer diameter", line = -1)
 
 plot(1, type = "n", axes = FALSE, xlab = "", ylab = "", xlim = c(0, 1), 
      ylim = get("last_plot.phylo",envir=.PlotPhyloEnv)$y.lim)
@@ -546,7 +546,7 @@ plot(obj_shorterd, fsize = c(0.7, 0.7),
      leg.txt = "shorter diameter (log)",
      direction="leftwards",
      ftype="off")
-title("b. Dispersal unit longer diameter", line = -1)
+title("b. Dispersal unit shorter diameter", line = -1)
 
 dev.off()
 

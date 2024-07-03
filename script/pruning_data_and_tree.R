@@ -24,15 +24,15 @@ write.nexus(tree, file = "output/data/pruned_tree.nex")
 tree_subset <- extract.clade(tree, getMRCA(tree, c("Lachesiodendron_viridiflorum", "Microlobius_foetidus")))
 write.nexus(tree_subset, file = "output/data/tree_subset.nex")
 
-#=====#
-# CAT #
-#=====#
+#======#
+# DISC #
+#======#
 
 data_pruned <- data[data$name_phylogeny %in% tree$tip.label, ]
 
 data_cat <- data_pruned[, c(4, 9:11)]
 
-write.csv(data_cat, "output/data/data_cat.csv", row.names = F)
+write.csv(data_cat, "output/data/data_disc.csv", row.names = F)
 
 #======#
 # CONT #

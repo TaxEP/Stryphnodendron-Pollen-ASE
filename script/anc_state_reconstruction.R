@@ -19,15 +19,15 @@ phy <- read.nexus("output/data/pruned_tree.nex")
 # standardize branch lengths to fit models
 phy$edge.length <- phy$edge.length / max(phy$edge.length)
 
+# read discrete traits
+traits_cat <- read.csv("output/data/data_disc.csv", 
+                       header = TRUE, row.names = 1)
+
 # read continuous traits
 traits_cont <- read.csv("output/data/data_cont.csv", 
                         header = TRUE, row.names = 1)
 
-# read categorical traits
-traits_cat <- read.csv("output/data/data_cat.csv", 
-                   header = TRUE, row.names = 1)
-
-# 3.1. Categorical traits evolutionary models =================================
+# 3.1. Discrete traits evolutionary models =================================
 
 # Set seed for replicability
 set.seed(7)

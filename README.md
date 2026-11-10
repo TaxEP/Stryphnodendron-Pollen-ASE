@@ -5,6 +5,9 @@
 For details on methodology and results, see the published paper:  
 https://doi.org/10.1007/s40415-024-01059-y
 
+**Note on methodological correction**
+The published paper describes the ancestral state reconstruction of continuous traits as having been performed under different evolutionary models. However, we clarify that all continuous-trait ancestral state reconstructions were actually conducted under the Brownian Motion (BM) model, as documented in the scripts provided here.
+
 ## Data folder
 
 - **pip_group.tre**: Phylogenetic hypothesis of the Stryphnodendron and Mimosa clades, synthesized from Vasconcelos et al. (2020), Borges et al. (2022), and Lima et al. (2022).

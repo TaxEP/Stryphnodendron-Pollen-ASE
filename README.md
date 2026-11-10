@@ -6,6 +6,7 @@ For details on methodology and results, see the published paper:
 https://doi.org/10.1007/s40415-024-01059-y
 
 **Note on methodological correction**
+
 The published paper describes the ancestral state reconstruction of continuous traits as having been performed under different evolutionary models. However, we clarify that all continuous-trait ancestral state reconstructions were actually conducted under the Brownian Motion (BM) model, as documented in the scripts provided here.
 
 ## Data folder
